@@ -3,6 +3,7 @@ import './App.css';
 import Presentation from './components/Presentation';
 import SkillsContainer from './components/SkillsContainer';
 import ProjectsContainer from './components/ProjectsContainer';
+import Footer from './components/Footer';
 import avatar from './assets/avatar.png';
 
 const flag = "https://cdn.countryflags.com/thumbs/argentina/flag-round-250.png"
@@ -52,7 +53,7 @@ function App() {
         <SkillsContainer skills={mySkills} />
         <ProjectsContainer projects={myProjects}/>
       </div>
-      <footer>Alex Lecco 2020</footer>
+      <Footer name={name}/>
     </div>
   );
 }
