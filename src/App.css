@@ -1,6 +1,13 @@
-.App {
+.Dark {
   text-align: center;
   background-color: #282c34;
+  /*background-color: darkviolet;*/
+  color: white;
+}
+
+.Light {
+  text-align: center;
+  background-color: #e0e0e0;
   /*background-color: darkviolet;*/
   color: white;
 }
@@ -60,4 +67,8 @@
 .presentation-flag {
   height: 5vmin;
   pointer-events: none;
+}
+
+.skill-container {
+  margin: 10px 0;
 }
