@@ -1,4 +1,4 @@
-import React, { Component, Fragment } from 'react';
+import React, { Component } from 'react';
 import Skill from './Skill';
 
 export default class SkillsContainer extends Component {

@@ -1,4 +1,4 @@
-import React, { Component, Fragment } from 'react';
+import React, { Component } from 'react';
 import Project from './Project';
 
 export default class ProjectsContainer extends Component {

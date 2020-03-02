@@ -1,4 +1,4 @@
-import React, { Component, Fragment } from 'react';
+import React, { Component } from 'react';
 
 export default class Footer extends Component {
     getStringYear() {
@@ -13,9 +13,9 @@ export default class Footer extends Component {
         const year = this.getStringYear();
 
         return(
-            <Fragment>
+            <div className="p-6">
                 <h3>{name} - {year}</h3>
-            </Fragment>
+            </div>
         );
     }
 }
