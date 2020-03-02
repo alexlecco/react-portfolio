@@ -5,12 +5,12 @@ import SkillsContainer from './components/SkillsContainer';
 import ProjectsContainer from './components/ProjectsContainer';
 import Footer from './components/Footer';
 
-class App extends Component {
+export default class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
       theme: "Dark", // Light or Dark
-      avatar: "https://scontent.faep7-1.fna.fbcdn.net/v/t1.0-9/76897222_2636224256468145_4246619209926180864_n.jpg?_nc_cat=106&_nc_sid=85a577&_nc_oc=AQn4eGCmihYU-73IGvaK4IVnGMBHaOi9T78tejZiDteiLqweT7y3kajdT58526pLvqg&_nc_ht=scontent.faep7-1.fna&oh=b2720ae719f3d088ec4d77f548d2dd98&oe=5EFC0384",
+      avatar: "https://media-exp1.licdn.com/dms/image/C4D03AQHulXu2eGehkg/profile-displayphoto-shrink_200_200/0?e=1588809600&v=beta&t=rEImrtkR0KNgbuJW0u8GNp7fXLx1ZoUrJYRqpeJe1FA",
       flag: "https://cdn.countryflags.com/thumbs/argentina/flag-round-250.png",
       name: "Alex Lecco",
       roll: "Web UI Developer",
@@ -97,7 +97,7 @@ class App extends Component {
     
     return (
       <div className={`${theme} text-center p-2`}>
-        <p className="text-left" onClick={changeTheme}>{changeThemeText}</p>
+        <p className="text-left cursor-pointer" onClick={changeTheme}>{changeThemeText}</p>
         
         <Presentation
             avatar={avatar}
@@ -105,15 +105,12 @@ class App extends Component {
             name={name}
             roll={roll}
             description={description}
+            theme={theme}
         />
-        <div>
-          <SkillsContainer skills={mySkills} />
-          <ProjectsContainer projects={myProjects}/>
-        </div>
+        <SkillsContainer skills={mySkills} theme={theme}  />
+        <ProjectsContainer projects={myProjects}/>
         <Footer name={name}/>
       </div>
     );
   }
 }
-
-export default App;

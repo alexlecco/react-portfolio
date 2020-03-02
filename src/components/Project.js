@@ -6,7 +6,7 @@ export default class Project extends Component {
 
         return(
             <div className="project-container">
-                <img src={photo} />
+                <img src={photo} alt="project" />
                 <h1 className="project-name">{name}</h1>
             </div>
         );
