@@ -6,8 +6,8 @@ export default class ProjectsContainer extends Component {
         const { projects } = this.props;
 
         return(
-            <div className="p-6">
-                <h1 className="text-left">Proyectos</h1>
+            <div className="m-6">
+                <h1 className="text-left my-2">Proyectos</h1>
                 {projects.map(project => <Project info={project} key={project.name} />)}
             </div>
         );

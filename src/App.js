@@ -77,6 +77,10 @@ class App extends Component {
     }
   }
 
+  changeTheme() {
+    this.setState({theme: this.state.theme === "Dark" ? "Light" : "Dark"})
+  }
+
   render() {
     const {
       theme,
@@ -88,9 +92,13 @@ class App extends Component {
       mySkills,
       myProjects
     } = this.state
+    const changeTheme = () => this.changeTheme();
+    const changeThemeText = theme === "Dark" ? "tema claro" : "tema oscuro";
     
     return (
       <div className={`${theme} text-center p-2`}>
+        <p className="text-left" onClick={changeTheme}>{changeThemeText}</p>
+        
         <Presentation
             avatar={avatar}
             flag={flag} 

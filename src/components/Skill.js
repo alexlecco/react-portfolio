@@ -8,7 +8,6 @@ export default class Skill extends Component {
     render() {
         const { name, level, photo, color, hashtags } = this.props.info;
         const stringLevel = this.getStringLevel(level);
-        console.log("color:::::::::::::::::::::", color)
 
         return(
             <div className="my-8 flex">
