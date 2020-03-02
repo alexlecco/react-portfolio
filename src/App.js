@@ -20,6 +20,7 @@ class App extends Component {
           name: "HTML",
           level: 3,
           photo: "https://kariselovuo.pro/ksprov1/wp-content/uploads/2018/02/html-logo-300x300.png",
+          color: "#AB8C20",
           hashtags: [
             {
               tech: "geolocation",
@@ -36,6 +37,7 @@ class App extends Component {
           name: "CSS",
           level: 2,
           photo: "https://kariselovuo.pro/ksprov1/wp-content/uploads/2018/02/css-logo-300x300.png",
+          color: "#4A90E2",
           hashtags: [
             {
               tech: "pseudo-elements",
@@ -49,6 +51,7 @@ class App extends Component {
           name: "Javascript",
           level: 1,
           photo: "https://kariselovuo.pro/ksprov1/wp-content/uploads/2018/02/javascript-logo-300x300.png",
+          color: "#EBD729",
           hashtags: [
             {
               tech: "es6",
