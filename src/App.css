@@ -17,21 +17,21 @@
   padding: 20px 10px;
 }
 
-.project-container {
+.image-container {
   position: relative;
   display: inline-block;
 }
 
-.project-container .project-name {
+.image-container .project-name, .study-info {
   position: absolute;
   z-index: 999;
   margin: 0 auto;
   left: 0;
-  right: 0;        
+  right: 0;
   top: 50%;
   background: rgba(0, 0, 0, 0.8);
   color: #fff;
-  width: 60%;
+  width: 70%;
 }
 
 .presentation-avatar {

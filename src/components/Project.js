@@ -5,7 +5,7 @@ export default class Project extends Component {
         const { name, photo } = this.props.info;
 
         return(
-            <div className="project-container">
+            <div className="image-container">
                 <img src={photo} alt="project" />
                 <h1 className="project-name">{name}</h1>
             </div>

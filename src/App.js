@@ -5,6 +5,9 @@ import SkillsContainer from './components/SkillsContainer';
 import ProjectsContainer from './components/ProjectsContainer';
 import Footer from './components/Footer';
 import StudiesContainer from './components/StudiesContainer';
+import raul from './assets/raul.png';
+import albert from './assets/albert.png';
+import utn from './assets/utn.png';
 
 export default class App extends Component {
   constructor(props) {
@@ -84,17 +87,20 @@ export default class App extends Component {
         {
           level: "primario",
           place: "Raul Colombres",
-          year: "2002"
+          year: "2002",
+          photo: raul
         },
         {
           level: "secundario",
           place: "Alberto Einstein",
-          year: "2007"
+          year: "2007",
+          photo: albert
         },
         {
           level: "universitario",
           place: "UTN",
-          year: "?"
+          year: "?",
+          photo: utn
         }
       ]
     }
@@ -116,14 +122,14 @@ export default class App extends Component {
       myProjects,
       myStudies
     } = this.state
-    
+
     const changeTheme = () => this.changeTheme();
     const changeThemeText = theme === "Dark" ? "tema claro" : "tema oscuro";
     
     return (
       <div className={`${theme} text-center p-2`}>
         <p className="text-left cursor-pointer" onClick={changeTheme}>{changeThemeText}</p>
-        
+
         <Presentation
             avatar={avatar}
             flag={flag} 
