@@ -4,6 +4,7 @@ import Presentation from './components/Presentation';
 import SkillsContainer from './components/SkillsContainer';
 import ProjectsContainer from './components/ProjectsContainer';
 import Footer from './components/Footer';
+import StudiesContainer from './components/StudiesContainer';
 
 export default class App extends Component {
   constructor(props) {
@@ -31,7 +32,12 @@ export default class App extends Component {
             }, {
               tech: "accessibility",
               link: "https://developer.mozilla.org/en-US/docs/Learn/Accessibility/HTML"
-            }]
+            },
+            {
+              tech: "HTML6Tags",
+              link: ""
+            }
+          ]
         },
         {
           name: "CSS",
@@ -73,6 +79,23 @@ export default class App extends Component {
           name: "RollingMedical",
           photo: "https://www.websitesdesign.site/imagini/medicom-flat-design-doctor-website-template.jpg"
         }
+      ],
+      myStudies: [
+        {
+          level: "primario",
+          place: "Raul Colombres",
+          year: "2002"
+        },
+        {
+          level: "secundario",
+          place: "Alberto Einstein",
+          year: "2007"
+        },
+        {
+          level: "universitario",
+          place: "UTN",
+          year: "?"
+        }
       ]
     }
   }
@@ -90,8 +113,10 @@ export default class App extends Component {
       roll,
       description,
       mySkills,
-      myProjects
+      myProjects,
+      myStudies
     } = this.state
+    
     const changeTheme = () => this.changeTheme();
     const changeThemeText = theme === "Dark" ? "tema claro" : "tema oscuro";
     
@@ -107,7 +132,10 @@ export default class App extends Component {
             description={description}
             theme={theme}
         />
-        <SkillsContainer skills={mySkills} theme={theme}  />
+        
+        <StudiesContainer studies={myStudies}/>
+
+        <SkillsContainer skills={mySkills} theme={theme} />
         <ProjectsContainer projects={myProjects}/>
         <Footer name={name}/>
       </div>
