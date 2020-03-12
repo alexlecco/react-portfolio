@@ -6,7 +6,7 @@ export default class Study extends Component {
 
         return(
             <div className="image-container">
-                <img src={photo} />
+                <img src={photo} alt="study" />
                 <div className="study-info">
                     <p>Nivel: {level} </p>
                     <p>Establecimiento: {place} </p>
