@@ -13,6 +13,7 @@ export default class App extends Component {
     super(props);
     this.state = {
       theme: "Dark", // Light or Dark
+      isLoading: true,
       claps: 0,
       user: {
         name: "",
@@ -36,7 +37,6 @@ export default class App extends Component {
 
   listenForUser(userRef) {
     userRef.on('value', snap => {
-      console.log(snap)
       const user = {
         name: snap.val().name,
         roll: snap.val().roll,
@@ -49,7 +49,7 @@ export default class App extends Component {
         _key: snap.key
       }
 
-      this.setState({user: user});
+      this.setState({user: user, isLoading: false});
     });
   }
 
@@ -68,9 +68,12 @@ export default class App extends Component {
       myProjects,
       myStudies
     } = this.state.user;
-    const { theme } = this.state;
+    const { theme, isLoading } = this.state;
     const changeTheme = () => this.changeTheme();
     const changeThemeText = theme === "Dark" ? "tema claro" : "tema oscuro";
+    console.log("render")
+
+    if(isLoading) return <div className="h-screen bg-gray-400 text-center">cargando...</div>
 
     return (
       <div className={`${theme} text-center p-2`}>
@@ -85,7 +88,7 @@ export default class App extends Component {
           theme={theme}
         />
 
-        <StudiesContainer studies={myStudies}/>
+        <StudiesContainer studies={myStudies} />
         <SkillsContainer skills={mySkills} theme={theme} />
         <ProjectsContainer projects={myProjects}/>
         
