@@ -76,7 +76,7 @@ export default class App extends Component {
     if(isLoading) return <div className="h-screen bg-gray-400 text-center">cargando...</div>
 
     return (
-      <div className={`${theme} text-center p-2`}>
+      <div className={`${theme} text-center p-3 md:px-20`}>
         <p className="text-left cursor-pointer" onClick={changeTheme}>{changeThemeText}</p>
 
         <Presentation

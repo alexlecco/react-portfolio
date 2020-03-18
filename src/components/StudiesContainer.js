@@ -7,7 +7,10 @@ export default class StudiesContainer extends Component {
 
         return(
             <Fragment>
-                { studies.map(study => <Study info={study} />) }
+                <h1 className="text-left my-2"> Estudios </h1>
+                <div className="md:flex md:w-full overflow-hidden">
+                    { studies.map(study => <Study info={study} />) }
+                </div>
             </Fragment>
         )
     }

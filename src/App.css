@@ -40,7 +40,7 @@
 }
 
 .presentation-flag {
-  height: 5vmin;
+  height: 20px; /*5vmin*/
   pointer-events: none;
 }
 
