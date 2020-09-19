@@ -2,8 +2,8 @@ import React, { Component } from "react";
 
 export default class Presentation extends Component {
   render() {
-    const { flag, avatar, name, roll, description, theme } = this.props;
-    const rollTextColor =
+    const { flag, avatar, name, profile, description, theme } = this.props;
+    const profileTextColor =
       theme === "Dark" ? "text-purple-500" : "text-orange-900";
 
     return (
@@ -25,7 +25,7 @@ export default class Presentation extends Component {
               />
               <h2 class="text-lg">{name}</h2>
             </div>
-            <div class={`text-lg ${rollTextColor}`}>{roll}</div>
+            <div class={`text-lg ${profileTextColor}`}>{profile}</div>
             <h3 className="text-sm font-hairline md:text-lg md:w-3/4">
               {description}
             </h3>

@@ -14,7 +14,7 @@ const App = () => {
   const [user, setUser] = useState({});
 
   useEffect(() => {
-    const userRef = firebaseApp.database().ref().child("user");
+    const userRef = firebaseApp.database().ref().child("data");
     listenForUser(userRef);
   }, []);
 
@@ -22,13 +22,9 @@ const App = () => {
     userRef.on("value", (snap) => {
       const user = {
         name: snap.val().name,
-        roll: snap.val().roll,
-        description: snap.val().description,
+        profile: snap.val().profile,
         flag: snap.val().flag,
         avatar: snap.val().avatar,
-        myStudies: snap.val().myStudies,
-        mySkills: snap.val().mySkills,
-        myProjects: snap.val().myProjects,
         _key: snap.key,
       };
 
@@ -41,16 +37,7 @@ const App = () => {
     setTheme(theme === "Dark" ? "Light" : "Dark");
   };
 
-  const {
-    avatar,
-    flag,
-    name,
-    roll,
-    description,
-    mySkills,
-    myProjects,
-    myStudies,
-  } = user;
+  const { avatar, flag, name, profile } = user;
 
   const changeThemeText = theme === "Dark" ? "tema claro" : "tema oscuro";
 
@@ -59,10 +46,8 @@ const App = () => {
       <div className="h-screen bg-gray-400 text-center"> cargando... </div>
     );
 
-  console.log("user::::::", user);
-
   return (
-    <div className={`${theme} text-center p-3 md:px-20`}>
+    <div className={`${theme} text-center p-3 md:px-20 min-h-screen`}>
       <p className="text-left cursor-pointer" onClick={changeTheme}>
         {changeThemeText}
       </p>
@@ -71,14 +56,9 @@ const App = () => {
         avatar={avatar}
         flag={flag}
         name={name}
-        roll={roll}
-        description={description}
+        profile={profile}
         theme={theme}
       />
-
-      <StudiesContainer studies={myStudies} />
-      <SkillsContainer skills={mySkills} theme={theme} />
-      <ProjectsContainer projects={myProjects} />
 
       <Footer name={name} />
     </div>
