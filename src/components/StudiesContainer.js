@@ -1,17 +1,16 @@
-import React, {Component, Fragment} from 'react';
-import Study from './Study';
+import React from "react";
+import Study from "./Study";
 
-export default class StudiesContainer extends Component {
-    render() {
-        const { studies } = this.props;
+const StudiesContainer = ({ studies }) => {
+  console.log("studies:::::", studies);
+  return (
+    <>
+      <h1 className="text-left my-2"> Estudios </h1>
+      <div className="md:flex md:w-full overflow-hidden">
+        {studies && studies.map((study) => <Study info={study} />)}
+      </div>
+    </>
+  );
+};
 
-        return(
-            <Fragment>
-                <h1 className="text-left my-2"> Estudios </h1>
-                <div className="md:flex md:w-full overflow-hidden">
-                    { studies.map(study => <Study info={study} />) }
-                </div>
-            </Fragment>
-        )
-    }
-}
+export default StudiesContainer;

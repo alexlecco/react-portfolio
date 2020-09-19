@@ -1,21 +1,22 @@
-import React, { Component } from 'react';
+import React from "react";
 
-export default class Footer extends Component {
-    getStringYear() {
-        const today = new Date(Date.now());
-        const year = today.toString().substring(11, 15);
+const Footer = ({ name }) => {
+  const getStringYear = () => {
+    const today = new Date(Date.now());
+    const year = today.toString().substring(11, 15);
 
-        return year
-    }
+    return year;
+  };
 
-    render() {
-        const { name } = this.props;
-        const year = this.getStringYear();
+  const year = getStringYear();
 
-        return(
-            <div className="p-6">
-                <h3>{name} - {year}</h3>
-            </div>
-        );
-    }
-}
+  return (
+    <div className="p-6">
+      <h3>
+        {name} - {year}
+      </h3>
+    </div>
+  );
+};
+
+export default Footer;
