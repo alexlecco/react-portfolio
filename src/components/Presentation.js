@@ -18,7 +18,7 @@ const Presentation = ({
   const getMyResumeText = "get my resume";
 
   return (
-    <div className="bg-transparent">
+    <>
       <div className={`${theme}-transparent flex justify-between`}>
         <p
           className="cursor-pointer flex flex-col items-center pl-2 pt-2"
@@ -54,7 +54,26 @@ const Presentation = ({
           </h3>
         </div>
       </div>
-    </div>
+      <ul
+        className={`${theme}-transparent md:flex md:flex-row md:justify-center md:align-middle md:pb-8`}
+      >
+        <li className="md:pr-20 pb-10 md:pb-0">
+          <div className="cursor-pointer">goals</div>
+        </li>
+        <li className="md:pr-20 pb-10 md:pb-0">
+          <div className="cursor-pointer">skills</div>
+        </li>
+        <li className="md:pr-20 pb-10 md:pb-0">
+          <div className="cursor-pointer">experience</div>
+        </li>
+        <li className="md:pr-20 pb-10 md:pb-0">
+          <div className="cursor-pointer">portfolio</div>
+        </li>
+        <li className="pb-10 md:pb-0">
+          <div className="cursor-pointer">contact</div>
+        </li>
+      </ul>
+    </>
   );
 };
 
