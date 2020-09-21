@@ -1,6 +1,6 @@
 import React from "react";
 
-const Project = ({ info }) => {
+const Goal = ({ info }) => {
   const { name, photo } = info;
 
   return (
@@ -11,4 +11,4 @@ const Project = ({ info }) => {
   );
 };
 
-export default Project;
+export default Goal;

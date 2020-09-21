@@ -22,14 +22,14 @@ const Presentation = ({
     <>
       <div className={`${theme}-transparent flex justify-between`}>
         <p
-          className="cursor-pointer flex flex-col items-center pl-8 pt-8"
+          className="cursor-pointer flex flex-col items-center p-8"
           onClick={changeTheme}
         >
           <Brightness4Icon fontSize="small" />
           {false && <div className="noselect">{changeThemeText}</div>}
         </p>
         <p
-          className="cursor-pointer flex flex-col items-center pr-8 pt-8"
+          className="cursor-pointer flex flex-col items-center p-8"
           onClick={() => {}}
         >
           <GetAppIcon fontSize="small" />

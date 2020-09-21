@@ -2,6 +2,11 @@ import React, { useState, useEffect } from "react";
 import "./App.css";
 import Presentation from "./components/Presentation";
 import Footer from "./components/Footer";
+import GoalsContainer from "./components/body/GoalsContainer";
+import SkillsContainer from "./components/body/SkillsContainer";
+import ExperienceContainer from "./components/body/ExperienceContainer";
+import PortfolioContainer from "./components/body/PortfolioContainer";
+import Contact from "./components/body/Contact";
 import { firebaseApp } from "./firebase";
 
 const App = () => {
@@ -60,6 +65,12 @@ const App = () => {
           theme={theme}
           changeTheme={changeTheme}
         />
+
+        <GoalsContainer theme={theme} />
+        <SkillsContainer theme={theme} />
+        <ExperienceContainer theme={theme} />
+        <PortfolioContainer theme={theme} />
+        <Contact theme={theme} />
 
         <Footer name={name} theme={theme} />
       </div>
