@@ -11,19 +11,15 @@ export default class Presentation extends Component {
         <div class="md:flex p-6">
           <div className="flex justify-center md:justify-end md:w-1/2 md:mx-20">
             <img
-              class="w-32 md:w-64 rounded-full mx-auto md:mx-0"
+              class="w-32 md:w-64 rounded-full mx-auto md:mx-0 items-center"
               src={avatar}
               alt="avatar"
             />
           </div>
-          <div class="md:w-1/2 md:text-left text-center md:justify-end">
-            <div className="md:flex">
-              <img
-                src={flag}
-                className="mx-auto md:mx-0 presentation-flag"
-                alt="flag"
-              />
-              <h2 class="text-lg">{name}</h2>
+          <div class="md:w-1/2 md:flex md:flex-col md:justify-center md:items-start">
+            <div className="flex flex-row justify-center align-middle pb-3">
+              <img src={flag} className="presentation-flag" alt="flag" />
+              <h2 class="text-3xl pl-3">{name}</h2>
             </div>
             <div class={`text-lg ${profileTextColor}`}>{profile}</div>
             <h3 className="text-sm font-hairline md:text-lg md:w-3/4">
