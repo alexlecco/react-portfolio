@@ -22,14 +22,14 @@ const Presentation = ({
     <>
       <div className={`${theme}-transparent flex justify-between`}>
         <p
-          className="cursor-pointer flex flex-col items-center pl-2 pt-2"
+          className="cursor-pointer flex flex-col items-center pl-8 pt-8"
           onClick={changeTheme}
         >
           <Brightness4Icon fontSize="small" />
           {false && <div className="noselect">{changeThemeText}</div>}
         </p>
         <p
-          className="cursor-pointer flex flex-col items-center pr-2 pt-2"
+          className="cursor-pointer flex flex-col items-center pr-8 pt-8"
           onClick={() => {}}
         >
           <GetAppIcon fontSize="small" />
@@ -49,7 +49,7 @@ const Presentation = ({
             <img src={flag} className="presentation-flag" alt="flag" />
             <h2 class={`text-3xl pl-3 ${theme}-transparent`}>{name}</h2>
           </div>
-          <div class={`text-lg ${profileTextColor}`}>{profile}</div>
+          <div class={`text-lg ${profileTextColor} shadow-xl`}>{profile}</div>
           <h3 className="text-sm font-hairline md:text-lg md:w-3/4">
             {description}
           </h3>
