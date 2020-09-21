@@ -22,7 +22,8 @@
   display: inline-block;
 }
 
-.image-container .project-name, .study-info {
+.image-container .project-name,
+.study-info {
   position: absolute;
   z-index: 999;
   margin: 0 auto;
@@ -45,5 +46,31 @@
 }
 
 .skill-info {
-  background-color: #AB8C20;
+  background-color: #ab8c20;
+}
+
+.svg-icon {
+  width: 1em;
+  height: 1em;
+}
+
+.svg-icon path,
+.svg-icon polygon,
+.svg-icon rect {
+  fill: #fff;
+}
+
+.svg-icon circle {
+  stroke: #fff;
+  stroke-width: 1;
+}
+
+.noselect {
+  -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none; /* Safari */
+  -khtml-user-select: none; /* Konqueror HTML */
+  -moz-user-select: none; /* Old versions of Firefox */
+  -ms-user-select: none; /* Internet Explorer/Edge */
+  user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome, Edge, Opera and Firefox */
 }

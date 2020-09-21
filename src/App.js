@@ -1,12 +1,10 @@
 import React, { useState, useEffect } from "react";
 import "./App.css";
 import Presentation from "./components/Presentation";
-import SkillsContainer from "./components/SkillsContainer";
-import ProjectsContainer from "./components/ProjectsContainer";
 import Footer from "./components/Footer";
-import StudiesContainer from "./components/StudiesContainer";
-
 import { firebaseApp } from "./firebase";
+import GetAppIcon from "@material-ui/icons/GetApp";
+import Brightness4Icon from "@material-ui/icons/Brightness4";
 
 const App = () => {
   const [loading, setLoading] = useState(true);
@@ -39,18 +37,34 @@ const App = () => {
 
   const { avatar, flag, name, profile } = user;
 
-  const changeThemeText = theme === "Dark" ? "tema claro" : "tema oscuro";
+  const changeThemeText = theme === "Dark" ? "light theme" : "dark theme";
+  const getMyResumeText = "get my resume";
 
   if (loading)
     return (
-      <div className="h-screen bg-gray-400 text-center"> cargando... </div>
+      <div className="h-screen bg-gray-400 flex flex-col items-center justify-center">
+        loading...
+      </div>
     );
 
   return (
     <div className={`${theme} text-center p-3 md:px-20 min-h-screen`}>
-      <p className="text-left cursor-pointer" onClick={changeTheme}>
-        {changeThemeText}
-      </p>
+      <div className="flex justify-between">
+        <p
+          className="cursor-pointer flex flex-col items-center pl-2 pt-2"
+          onClick={changeTheme}
+        >
+          <Brightness4Icon fontSize="small" />
+          {false && <div className="noselect">{changeThemeText}</div>}
+        </p>
+        <p
+          className="cursor-pointer flex flex-col items-center pr-2 pt-2"
+          onClick={() => {}}
+        >
+          <GetAppIcon fontSize="small" />
+          {false && <div className="noselect">{getMyResumeText}</div>}
+        </p>
+      </div>
 
       <Presentation
         avatar={avatar}
