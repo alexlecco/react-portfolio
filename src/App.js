@@ -3,8 +3,6 @@ import "./App.css";
 import Presentation from "./components/Presentation";
 import Footer from "./components/Footer";
 import { firebaseApp } from "./firebase";
-import GetAppIcon from "@material-ui/icons/GetApp";
-import Brightness4Icon from "@material-ui/icons/Brightness4";
 
 const App = () => {
   const [loading, setLoading] = useState(true);
@@ -23,6 +21,8 @@ const App = () => {
         profile: snap.val().profile,
         flag: snap.val().flag,
         avatar: snap.val().avatar,
+        coverdark: snap.val().coverdark,
+        coverlight: snap.val().coverlight,
         _key: snap.key,
       };
 
@@ -35,10 +35,7 @@ const App = () => {
     setTheme(theme === "Dark" ? "Light" : "Dark");
   };
 
-  const { avatar, flag, name, profile } = user;
-
-  const changeThemeText = theme === "Dark" ? "light theme" : "dark theme";
-  const getMyResumeText = "get my resume";
+  const { avatar, flag, name, profile, coverdark, coverlight } = user;
 
   if (loading)
     return (
@@ -48,33 +45,24 @@ const App = () => {
     );
 
   return (
-    <div className={`${theme} text-center p-3 md:px-20 min-h-screen`}>
-      <div className="flex justify-between">
-        <p
-          className="cursor-pointer flex flex-col items-center pl-2 pt-2"
-          onClick={changeTheme}
-        >
-          <Brightness4Icon fontSize="small" />
-          {false && <div className="noselect">{changeThemeText}</div>}
-        </p>
-        <p
-          className="cursor-pointer flex flex-col items-center pr-2 pt-2"
-          onClick={() => {}}
-        >
-          <GetAppIcon fontSize="small" />
-          {false && <div className="noselect">{getMyResumeText}</div>}
-        </p>
+    <div
+      className="bg-fixed bg-center bg-cover"
+      style={{
+        backgroundImage: `url(${theme === "Dark" ? coverdark : coverlight})`,
+      }}
+    >
+      <div className={`bg-transparent text-center min-h-screen`}>
+        <Presentation
+          avatar={avatar}
+          flag={flag}
+          name={name}
+          profile={profile}
+          theme={theme}
+          changeTheme={changeTheme}
+        />
+
+        <Footer name={name} theme={theme} />
       </div>
-
-      <Presentation
-        avatar={avatar}
-        flag={flag}
-        name={name}
-        profile={profile}
-        theme={theme}
-      />
-
-      <Footer name={name} />
     </div>
   );
 };

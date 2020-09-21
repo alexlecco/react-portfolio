@@ -5,9 +5,21 @@
   color: white;
 }
 
+.Dark-transparent {
+  text-align: center;
+  /*background-color: darkviolet;*/
+  color: white;
+}
+
 .Light {
   text-align: center;
   background-color: #bcac80;
+  /*background-color: darkviolet;*/
+  color: #211f19;
+}
+
+.Light-transparent {
+  text-align: center;
   /*background-color: darkviolet;*/
   color: #211f19;
 }
