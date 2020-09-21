@@ -1,6 +1,7 @@
 import React from "react";
 import GetAppIcon from "@material-ui/icons/GetApp";
 import Brightness4Icon from "@material-ui/icons/Brightness4";
+import NavigatorMenu from "./NavigatorMenu";
 
 const Presentation = ({
   flag,
@@ -54,25 +55,7 @@ const Presentation = ({
           </h3>
         </div>
       </div>
-      <ul
-        className={`${theme}-transparent md:flex md:flex-row md:justify-center md:align-middle md:pb-8`}
-      >
-        <li className="md:pr-20 pb-10 md:pb-0">
-          <div className="cursor-pointer">goals</div>
-        </li>
-        <li className="md:pr-20 pb-10 md:pb-0">
-          <div className="cursor-pointer">skills</div>
-        </li>
-        <li className="md:pr-20 pb-10 md:pb-0">
-          <div className="cursor-pointer">experience</div>
-        </li>
-        <li className="md:pr-20 pb-10 md:pb-0">
-          <div className="cursor-pointer">portfolio</div>
-        </li>
-        <li className="pb-10 md:pb-0">
-          <div className="cursor-pointer">contact</div>
-        </li>
-      </ul>
+      <NavigatorMenu theme={theme} />
     </>
   );
 };
