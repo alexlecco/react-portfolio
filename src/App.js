@@ -32,6 +32,7 @@ const App = () => {
         avatar: snap.val().avatar,
         coverdark: snap.val().coverdark,
         coverlight: snap.val().coverlight,
+        goals: snap.val().goals,
         _key: snap.key,
       };
 
@@ -44,7 +45,7 @@ const App = () => {
     setTheme(theme === "Dark" ? "Light" : "Dark");
   };
 
-  const { avatar, flag, name, profile, coverdark, coverlight } = user;
+  const { avatar, flag, name, profile, coverdark, coverlight, goals } = user;
 
   if (loading)
     return (
@@ -72,7 +73,7 @@ const App = () => {
         />
 
         <Element name="goalsElement">
-          <GoalsContainer theme={theme} />
+          <GoalsContainer theme={theme} goals={goals} />
         </Element>
 
         <Element name="skillsElement">

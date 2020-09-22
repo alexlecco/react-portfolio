@@ -3,7 +3,7 @@ import Skill from "./Skill";
 
 const SkillsContainer = ({ skills, theme }) => {
   return (
-    <div className={`${theme} h-64 pr-8 md:pr-48`}>
+    <div className={`${theme} h-auto pr-8 md:pr-48 pb-20`}>
       <h1 className="text-right text-lg pt-8">
         Technical Skills
         <span className="ml-2" role="img" aria-label="Technical Skills">
