@@ -11,6 +11,7 @@ const Presentation = ({
   description,
   theme,
   changeTheme,
+  scroller,
 }) => {
   const profileTextColor =
     theme === "Dark" ? "text-purple-500" : "text-orange-900";
@@ -19,7 +20,7 @@ const Presentation = ({
   const getMyResumeText = "get my resume";
 
   return (
-    <>
+    <div className="h-screen">
       <div className={`${theme}-transparent flex justify-between`}>
         <p
           className="cursor-pointer flex flex-col items-center p-8"
@@ -49,14 +50,14 @@ const Presentation = ({
             <img src={flag} className="presentation-flag" alt="flag" />
             <h2 class={`text-3xl pl-3 ${theme}-transparent`}>{name}</h2>
           </div>
-          <div class={`text-lg ${profileTextColor} shadow-xl`}>{profile}</div>
+          <div class={`text-lg ${profileTextColor}`}>{profile}</div>
           <h3 className="text-sm font-hairline md:text-lg md:w-3/4">
             {description}
           </h3>
         </div>
       </div>
-      <NavigatorMenu theme={theme} />
-    </>
+      <NavigatorMenu theme={theme} scroller={scroller} />
+    </div>
   );
 };
 

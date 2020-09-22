@@ -3,12 +3,20 @@ import KeyboardArrowDownIcon from "@material-ui/icons/KeyboardArrowDown";
 import KeyboardArrowUpIcon from "@material-ui/icons/KeyboardArrowUp";
 import useWindowWidth from "../hooks/useWindowWidth";
 
-function NavigatorMenu({ theme }) {
+function NavigatorMenu({ theme, scroller }) {
   const [openedMenu, setOpenedMenu] = useState(false);
   const { width } = useWindowWidth();
 
   const toggleMenu = () => {
     setOpenedMenu((prevOpenedMenu) => !prevOpenedMenu);
+  };
+
+  const scrollToElement = (element) => {
+    scroller.scrollTo(element, {
+      duration: 800,
+      delay: 0,
+      smooth: "easeInOutQuart",
+    });
   };
 
   return (
@@ -34,20 +42,24 @@ function NavigatorMenu({ theme }) {
             <ul
               className={`${theme}-transparent md:flex md:flex-row md:justify-center md:align-middle md:pb-8`}
             >
-              <li className="md:pr-32 pb-10 md:pb-0" onClick={() => {}}>
-                <div className="cursor-pointer">goals</div>
+              <li className="md:pr-32 pb-10 md:pb-0 cursor-pointer">
+                <p onClick={() => scrollToElement("goalsElement")}>goals</p>
               </li>
-              <li className="md:pr-32 pb-10 md:pb-0" onClick={() => {}}>
-                <div className="cursor-pointer">skills</div>
+              <li className="md:pr-32 pb-10 md:pb-0 cursor-pointer">
+                <p onClick={() => scrollToElement("skillsElement")}>skills</p>
               </li>
-              <li className="md:pr-32 pb-10 md:pb-0" onClick={() => {}}>
-                <div className="cursor-pointer">experience</div>
+              <li className="md:pr-32 pb-10 md:pb-0 cursor-pointer">
+                <p onClick={() => scrollToElement("experienceElement")}>
+                  experience
+                </p>
               </li>
-              <li className="md:pr-32 pb-10 md:pb-0" onClick={() => {}}>
-                <div className="cursor-pointer">portfolio</div>
+              <li className="md:pr-32 pb-10 md:pb-0 cursor-pointer">
+                <p onClick={() => scrollToElement("portfolioElement")}>
+                  portfolio
+                </p>
               </li>
-              <li className="pb-10 md:pb-0" onClick={() => {}}>
-                <div className="cursor-pointer">contact</div>
+              <li className="pb-10 md:pb-0 cursor-pointer">
+                <p onClick={() => scrollToElement("contactElement")}>contact</p>
               </li>
             </ul>
           )}
@@ -57,20 +69,26 @@ function NavigatorMenu({ theme }) {
           <ul
             className={`${theme}-transparent md:flex md:flex-row md:justify-center md:align-middle md:pb-8`}
           >
-            <li className="md:pr-32 pb-10 md:pb-0" onClick={() => {}}>
-              <div className="cursor-pointer">goals</div>
+            <li className="md:pr-32 pb-10 md:pb-0 cursor-pointer">
+              <p onClick={() => scrollToElement("goalsElement")}>goals</p>
             </li>
-            <li className="md:pr-32 pb-10 md:pb-0" onClick={() => {}}>
-              <div className="cursor-pointer">skills</div>
+            <li className="md:pr-32 pb-10 md:pb-0 cursor-pointer">
+              <p onClick={() => scrollToElement("skillsElement")}>skills</p>
             </li>
-            <li className="md:pr-32 pb-10 md:pb-0" onClick={() => {}}>
-              <div className="cursor-pointer">experience</div>
+            <li className="md:pr-32 pb-10 md:pb-0 cursor-pointer">
+              <p onClick={() => scrollToElement("experienceElement")}>
+                experience
+              </p>
             </li>
-            <li className="md:pr-32 pb-10 md:pb-0" onClick={() => {}}>
-              <div className="cursor-pointer">portfolio</div>
+            <li className="md:pr-32 pb-10 md:pb-0 cursor-pointer">
+              <p onClick={() => scrollToElement("portfolioElement")}>
+                portfolio
+              </p>
             </li>
-            <li className="pb-10 md:pb-0" onClick={() => {}}>
-              <div className="cursor-pointer">contact</div>
+            <li className="pb-10 md:pb-0 cursor-pointer">
+              <p onClick={() => scrollToElement("contactElement")}>
+                <p className="no-select">contact</p>
+              </p>
             </li>
           </ul>
         </div>

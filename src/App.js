@@ -7,7 +7,11 @@ import SkillsContainer from "./components/body/SkillsContainer";
 import ExperienceContainer from "./components/body/ExperienceContainer";
 import PortfolioContainer from "./components/body/PortfolioContainer";
 import Contact from "./components/body/Contact";
+import * as Scroll from "react-scroll";
 import { firebaseApp } from "./firebase";
+
+let Element = Scroll.Element;
+var scroller = Scroll.scroller;
 
 const App = () => {
   const [loading, setLoading] = useState(true);
@@ -64,13 +68,28 @@ const App = () => {
           profile={profile}
           theme={theme}
           changeTheme={changeTheme}
+          scroller={scroller}
         />
 
-        <GoalsContainer theme={theme} />
-        <SkillsContainer theme={theme} />
-        <ExperienceContainer theme={theme} />
-        <PortfolioContainer theme={theme} />
-        <Contact theme={theme} />
+        <Element name="goalsElement">
+          <GoalsContainer theme={theme} />
+        </Element>
+
+        <Element name="skillsElement">
+          <SkillsContainer theme={theme} />
+        </Element>
+
+        <Element name="experienceElement">
+          <ExperienceContainer theme={theme} />
+        </Element>
+
+        <Element name="portfolioElement">
+          <PortfolioContainer theme={theme} />
+        </Element>
+
+        <Element name="contactElement">
+          <Contact theme={theme} />
+        </Element>
 
         <Footer name={name} theme={theme} />
       </div>

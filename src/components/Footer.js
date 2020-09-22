@@ -11,7 +11,7 @@ const Footer = ({ name, theme }) => {
   const year = getStringYear();
 
   return (
-    <div className={`p-6 ${theme}`}>
+    <div className={`p-6 ${theme}-transparent`}>
       <h3>
         {name} - {year}
       </h3>
