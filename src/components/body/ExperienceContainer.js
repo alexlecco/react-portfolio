@@ -1,6 +1,7 @@
 import React from "react";
+import ArrowForwardIosIcon from "@material-ui/icons/ArrowForwardIos";
 
-const ExperienceContainer = ({ theme }) => {
+const ExperienceContainer = ({ theme, experience }) => {
   return (
     <div className={`${theme} h-auto pl-8 md:pl-48 pb-20`}>
       <h1 className="text-left text-lg pt-8">
@@ -9,6 +10,15 @@ const ExperienceContainer = ({ theme }) => {
           👷
         </span>
       </h1>
+      <div className="text-left pt-8">
+        {experience &&
+          experience.map((exp) => (
+            <div className="flex flex-row justify-start pb-2">
+              <ArrowForwardIosIcon />
+              <span className="pl-2">{exp}</span>
+            </div>
+          ))}
+      </div>
     </div>
   );
 };

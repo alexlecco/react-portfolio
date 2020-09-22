@@ -33,6 +33,7 @@ const App = () => {
         coverdark: snap.val().coverdark,
         coverlight: snap.val().coverlight,
         goals: snap.val().goals,
+        experience: snap.val().experience,
         _key: snap.key,
       };
 
@@ -45,7 +46,16 @@ const App = () => {
     setTheme(theme === "Dark" ? "Light" : "Dark");
   };
 
-  const { avatar, flag, name, profile, coverdark, coverlight, goals } = user;
+  const {
+    avatar,
+    flag,
+    name,
+    profile,
+    coverdark,
+    coverlight,
+    goals,
+    experience,
+  } = user;
 
   if (loading)
     return (
@@ -81,7 +91,7 @@ const App = () => {
         </Element>
 
         <Element name="experienceElement">
-          <ExperienceContainer theme={theme} />
+          <ExperienceContainer theme={theme} experience={experience} />
         </Element>
 
         <Element name="portfolioElement">

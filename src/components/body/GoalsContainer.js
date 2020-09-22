@@ -9,16 +9,16 @@ const GoalsContainer = ({ theme, goals }) => {
         <span className="ml-2" role="img" aria-label="Professional Goals">
           🏆
         </span>
-        <div className="">
-          {goals &&
-            goals.map((goal) => (
-              <div className="flex flex-row justify-start">
-                <CheckIcon />
-                {goal}
-              </div>
-            ))}
-        </div>
       </h1>
+      <div className="text-left pt-8">
+        {goals &&
+          goals.map((goal) => (
+            <div className="flex flex-row justify-start pb-2">
+              <CheckIcon />
+              <span className="pl-2">{goal}</span>
+            </div>
+          ))}
+      </div>
     </div>
   );
 };
