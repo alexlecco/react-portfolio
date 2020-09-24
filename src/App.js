@@ -68,7 +68,7 @@ const App = () => {
 
   return (
     <div
-      className="bg-fixed bg-center bg-cover"
+      className="bg-fixed bg-center bg-cover md:pr-48 md:pl-48 select-none md:select-text"
       style={{
         backgroundImage: `url(${theme === "Dark" ? coverdark : coverlight})`,
       }}

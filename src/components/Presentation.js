@@ -47,7 +47,7 @@ const Presentation = ({
         </div>
         <div class="md:w-1/2 md:flex md:flex-col md:justify-center md:items-start">
           <div className="flex flex-row justify-center align-middle pb-3">
-            <img src={flag} className="presentation-flag" alt="flag" />
+            {/*<img src={flag} className="presentation-flag" alt="flag" />*/}
             <h2 class={`text-3xl pl-3 ${theme}-transparent`}>{name}</h2>
           </div>
           <div class={`text-lg ${profileTextColor}`}>{profile}</div>
