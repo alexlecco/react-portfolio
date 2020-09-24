@@ -34,6 +34,7 @@ const App = () => {
         coverlight: snap.val().coverlight,
         goals: snap.val().goals,
         experience: snap.val().experience,
+        skills: snap.val().skills,
         _key: snap.key,
       };
 
@@ -55,6 +56,7 @@ const App = () => {
     coverlight,
     goals,
     experience,
+    skills,
   } = user;
 
   if (loading)
@@ -87,7 +89,7 @@ const App = () => {
         </Element>
 
         <Element name="skillsElement">
-          <SkillsContainer theme={theme} />
+          <SkillsContainer theme={theme} skills={skills} />
         </Element>
 
         <Element name="experienceElement">
