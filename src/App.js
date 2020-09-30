@@ -35,6 +35,7 @@ const App = () => {
         goals: snap.val().goals,
         experience: snap.val().experience,
         skills: snap.val().skills,
+        portfolio: snap.val().portfolio,
         _key: snap.key,
       };
 
@@ -57,6 +58,7 @@ const App = () => {
     goals,
     experience,
     skills,
+    portfolio,
   } = user;
 
   if (loading)
@@ -97,7 +99,7 @@ const App = () => {
         </Element>
 
         <Element name="portfolioElement">
-          <PortfolioContainer theme={theme} />
+          <PortfolioContainer theme={theme} portfolio={portfolio} />
         </Element>
 
         <Element name="contactElement">

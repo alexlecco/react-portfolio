@@ -1,5 +1,5 @@
 import React from "react";
-import ArrowForwardIosIcon from "@material-ui/icons/ArrowForwardIos";
+import CheckIcon from "@material-ui/icons/Check";
 
 const ExperienceContainer = ({ theme, experience }) => {
   return (
@@ -14,7 +14,7 @@ const ExperienceContainer = ({ theme, experience }) => {
         {experience &&
           experience.map((exp) => (
             <div className="flex flex-row justify-start pb-2">
-              <ArrowForwardIosIcon />
+              <CheckIcon />
               <span className="pl-2">{exp}</span>
             </div>
           ))}

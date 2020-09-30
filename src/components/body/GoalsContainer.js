@@ -1,5 +1,5 @@
 import React from "react";
-import CheckIcon from "@material-ui/icons/Check";
+import ArrowForwardIosIcon from "@material-ui/icons/ArrowForwardIos";
 
 const GoalsContainer = ({ theme, goals }) => {
   return (
@@ -14,7 +14,7 @@ const GoalsContainer = ({ theme, goals }) => {
         {goals &&
           goals.map((goal) => (
             <div className="flex flex-row justify-start pb-2">
-              <CheckIcon />
+              <ArrowForwardIosIcon />
               <span className="pl-2">{goal}</span>
             </div>
           ))}
