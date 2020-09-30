@@ -4,7 +4,6 @@ import React from "react";
 const GoalsContainer = ({ theme, social }) => {
   //const { height } = useWindowHeight();
   //const sectionHeight = height - 72;
-  //console.log("sectionHeight::::::", sectionHeight);
 
   return (
     <div
@@ -21,7 +20,8 @@ const GoalsContainer = ({ theme, social }) => {
           social
             .filter((socNetwork) => socNetwork.contact)
             .map((socNetwork) => (
-              <a href={socNetwork.url}>
+              // eslint-disable-next-line react/jsx-no-target-blank
+              <a href={socNetwork.url} target="_blank">
                 <img
                   src={socNetwork.icon}
                   className="w-16 px-2"

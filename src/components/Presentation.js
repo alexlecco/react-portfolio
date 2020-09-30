@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import GetAppIcon from "@material-ui/icons/GetApp";
 import Brightness4Icon from "@material-ui/icons/Brightness4";
 import NavigatorMenu from "./NavigatorMenu";
@@ -14,29 +14,47 @@ const Presentation = ({
   scroller,
   social,
 }) => {
+  const [labelsVisible, setLabelsVisible] = useState({
+    theme: false,
+    resume: false,
+  });
   const profileTextColor =
     theme === "Dark" ? "text-teal-400" : "text-orange-900";
 
   const changeThemeText = theme === "Dark" ? "light theme" : "dark theme";
   const getMyResumeText = "get my resume";
 
+  const toggleLabelsVisible = (e) => {
+    e.currentTarget.classList[0] === "theme"
+      ? setLabelsVisible({ ...labelsVisible, theme: !labelsVisible.theme })
+      : setLabelsVisible({ ...labelsVisible, resume: !labelsVisible.resume });
+  };
+
   return (
     <div className="h-screen">
       <div className={`${theme}-transparent flex justify-between`}>
-        <p
-          className="cursor-pointer flex flex-col items-center p-8"
+        <div
+          className="theme cursor-pointer flex flex-col items-center p-8 w-20 h-20"
           onClick={changeTheme}
+          onMouseEnter={toggleLabelsVisible}
+          onMouseLeave={toggleLabelsVisible}
         >
           <Brightness4Icon fontSize="small" />
-          {false && <div className="noselect">{changeThemeText}</div>}
-        </p>
-        <p
-          className="cursor-pointer flex flex-col items-center p-8"
+          {labelsVisible.theme && (
+            <p className="hidden md:inline noselect">{changeThemeText}</p>
+          )}
+        </div>
+        <div
+          className="resume cursor-pointer flex flex-col items-center p-8 w-20 h-20"
           onClick={() => {}}
+          onMouseEnter={toggleLabelsVisible}
+          onMouseLeave={toggleLabelsVisible}
         >
           <GetAppIcon fontSize="small" />
-          {false && <div className="noselect">{getMyResumeText}</div>}
-        </p>
+          {labelsVisible.resume && (
+            <p className="hidden md:inline noselect">{getMyResumeText}</p>
+          )}
+        </div>
       </div>
       <div className="md:flex p-6 md:p-6">
         <div className="flex justify-center md:justify-end md:w-1/2 md:mx-20">
@@ -55,7 +73,8 @@ const Presentation = ({
           <div className="flex justify-center align-center">
             {social &&
               social.map((socNetwork) => (
-                <a href={socNetwork.url} className="">
+                // eslint-disable-next-line react/jsx-no-target-blank
+                <a href={socNetwork.url} target="_blank">
                   <img
                     src={socNetwork.icon}
                     className="w-16 px-2"
