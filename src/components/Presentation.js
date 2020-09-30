@@ -37,20 +37,20 @@ const Presentation = ({
           {false && <div className="noselect">{getMyResumeText}</div>}
         </p>
       </div>
-      <div class="md:flex p-6">
+      <div className="md:flex p-6">
         <div className="flex justify-center md:justify-end md:w-1/2 md:mx-20">
           <img
-            class="w-32 md:w-64 rounded-full mx-auto md:mx-0 items-center"
+            className="w-32 md:w-64 rounded-full mx-auto md:mx-0 items-center"
             src={avatar}
             alt="avatar"
           />
         </div>
-        <div class="md:w-1/2 md:flex md:flex-col md:justify-center md:items-start">
+        <div className="md:w-1/2 md:flex md:flex-col md:justify-center md:items-start">
           <div className="flex flex-row justify-center align-middle pb-3">
             {/*<img src={flag} className="presentation-flag" alt="flag" />*/}
-            <h2 class={`text-3xl pl-3 ${theme}-transparent`}>{name}</h2>
+            <h2 className={`text-3xl pl-3 ${theme}-transparent`}>{name}</h2>
           </div>
-          <div class={`text-lg ${profileTextColor}`}>{profile}</div>
+          <div className={`text-lg ${profileTextColor}`}>{profile}</div>
           <h3 className="text-sm font-hairline md:text-lg md:w-3/4">
             {description}
           </h3>

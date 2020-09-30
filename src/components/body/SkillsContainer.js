@@ -12,7 +12,7 @@ const SkillsContainer = ({ theme, skills }) => {
       </h1>
       <div className="flex flex-wrap overflow-hidden">
         {skills.map(({ name, list }) => (
-          <Skill name={name} list={list} theme={theme} />
+          <Skill name={name} list={list} theme={theme} key={name} />
         ))}
       </div>
     </div>

@@ -36,7 +36,7 @@ const Skill = ({ theme, name, list }) => {
           className={`${itemTextColor} flex flex-col justify-center text-center px-2 py-2 md:px-0`}
         >
           {list.map((item) => (
-            <div>{item}</div>
+            <div key={item}>{item}</div>
           ))}
         </div>
       </div>

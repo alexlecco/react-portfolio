@@ -87,7 +87,7 @@ function NavigatorMenu({ theme, scroller }) {
             </li>
             <li className="pb-10 md:pb-0 cursor-pointer">
               <p onClick={() => scrollToElement("contactElement")}>
-                <p className="no-select">contact</p>
+                <span className="no-select">contact</span>
               </p>
             </li>
           </ul>

@@ -103,3 +103,7 @@
   border: 0;
   padding: 0;
 }
+
+.projectContainer {
+  transition: all 0.5s ease;
+}

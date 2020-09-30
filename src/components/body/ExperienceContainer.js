@@ -13,7 +13,7 @@ const ExperienceContainer = ({ theme, experience }) => {
       <div className="text-left pt-8">
         {experience &&
           experience.map((exp) => (
-            <div className="flex flex-row justify-start pb-2">
+            <div className="flex flex-row justify-start pb-2" key={exp}>
               <CheckIcon />
               <span className="pl-2">{exp}</span>
             </div>

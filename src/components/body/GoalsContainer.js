@@ -13,7 +13,7 @@ const GoalsContainer = ({ theme, goals }) => {
       <div className="text-left pt-8">
         {goals &&
           goals.map((goal) => (
-            <div className="flex flex-row justify-start pb-2">
+            <div className="flex flex-row justify-start pb-2" key={goal}>
               <ArrowForwardIosIcon />
               <span className="pl-2">{goal}</span>
             </div>
