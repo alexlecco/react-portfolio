@@ -27,14 +27,14 @@ function NavigatorMenu({ theme, scroller }) {
             <div onClick={toggleMenu}>
               <KeyboardArrowUpIcon
                 fontSize="large"
-                className={`${theme}-transparent cursor-pointer mb-5`}
+                className={`${theme}-transparent cursor-pointer mb-2`}
               />
             </div>
           ) : (
             <div onClick={toggleMenu}>
               <KeyboardArrowDownIcon
                 fontSize="large"
-                className={`${theme}-transparent cursor-pointer mb-5`}
+                className={`${theme}-transparent cursor-pointer mb-2`}
               />
             </div>
           )}
@@ -42,23 +42,28 @@ function NavigatorMenu({ theme, scroller }) {
             <ul
               className={`${theme}-transparent md:flex md:flex-row md:justify-center md:align-middle md:pb-8`}
             >
-              <li className="md:pr-32 pb-10 md:pb-0 cursor-pointer">
-                <p onClick={() => scrollToElement("goalsElement")}>goals</p>
+              <li className="md:pr-32 py-2 mb-2 md:pb-0 cursor-pointer">
+                <p
+                  className="mb-2 background-shadow"
+                  onClick={() => scrollToElement("goalsElement")}
+                >
+                  goals
+                </p>
               </li>
-              <li className="md:pr-32 pb-10 md:pb-0 cursor-pointer">
+              <li className="md:pr-32 py-2 my-2 md:pb-0 cursor-pointer">
                 <p onClick={() => scrollToElement("skillsElement")}>skills</p>
               </li>
-              <li className="md:pr-32 pb-10 md:pb-0 cursor-pointer">
+              <li className="md:pr-32 py-2 my-2 md:pb-0 cursor-pointer">
                 <p onClick={() => scrollToElement("experienceElement")}>
                   experience
                 </p>
               </li>
-              <li className="md:pr-32 pb-10 md:pb-0 cursor-pointer">
+              <li className="md:pr-32 py-2 my-2 md:pb-0 cursor-pointer">
                 <p onClick={() => scrollToElement("portfolioElement")}>
                   portfolio
                 </p>
               </li>
-              <li className="pb-10 md:pb-0 cursor-pointer">
+              <li className="py-2 my-2 md:pb-0 cursor-pointer">
                 <p onClick={() => scrollToElement("contactElement")}>contact</p>
               </li>
             </ul>

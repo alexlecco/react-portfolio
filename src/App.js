@@ -86,6 +86,7 @@ const App = () => {
           theme={theme}
           changeTheme={changeTheme}
           scroller={scroller}
+          social={social}
         />
 
         <Element name="goalsElement">
