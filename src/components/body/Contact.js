@@ -21,7 +21,7 @@ const GoalsContainer = ({ theme, social }) => {
             .filter((socNetwork) => socNetwork.contact)
             .map((socNetwork) => (
               // eslint-disable-next-line react/jsx-no-target-blank
-              <a href={socNetwork.url} target="_blank">
+              <a href={socNetwork.url} target="_blank" key={socNetwork.name}>
                 <img
                   src={socNetwork.icon}
                   className="w-16 px-2"

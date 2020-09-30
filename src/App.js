@@ -37,6 +37,7 @@ const App = () => {
         skills: snap.val().skills,
         portfolio: snap.val().portfolio,
         social: snap.val().social,
+        claps: snap.val().claps,
         _key: snap.key,
       };
 
@@ -61,6 +62,7 @@ const App = () => {
     skills,
     portfolio,
     social,
+    claps,
   } = user;
 
   if (loading)
@@ -87,6 +89,7 @@ const App = () => {
           changeTheme={changeTheme}
           scroller={scroller}
           social={social}
+          claps={claps}
         />
 
         <Element name="goalsElement">

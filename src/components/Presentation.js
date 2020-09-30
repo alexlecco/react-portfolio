@@ -1,10 +1,11 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import GetAppIcon from "@material-ui/icons/GetApp";
 import Brightness4Icon from "@material-ui/icons/Brightness4";
 import NavigatorMenu from "./NavigatorMenu";
+import { firebaseApp } from "../firebase";
 
 const Presentation = ({
-  flag,
+  //flag,
   avatar,
   name,
   profile,
@@ -13,6 +14,7 @@ const Presentation = ({
   changeTheme,
   scroller,
   social,
+  claps,
 }) => {
   const [labelsVisible, setLabelsVisible] = useState({
     theme: false,
@@ -20,13 +22,19 @@ const Presentation = ({
     claps: false,
     resume: false,
   });
+  const [localClaps, setLocalClaps] = useState(claps);
+
   const profileTextColor =
     theme === "Dark" ? "text-teal-400" : "text-orange-900";
-
   const changeThemeText = theme === "Dark" ? "light theme" : "dark theme";
   const languageText = "spanish";
-  const clapsText = "claps";
+  const clapsText = `${claps} claps`;
   const getMyResumeText = "get my resume";
+
+  useEffect(() => {
+    const userRef = firebaseApp.database().ref().child("data").child("claps");
+    setTimeout(userRef.set(localClaps), 1000);
+  }, [localClaps]);
 
   const toggleLabelsVisible = (e) => {
     switch (e.currentTarget.classList[0]) {
@@ -46,6 +54,10 @@ const Presentation = ({
         setLabelsVisible({ ...labelsVisible, resume: !labelsVisible.resume });
         break;
     }
+  };
+
+  const incrementClaps = () => {
+    setLocalClaps(claps + 1);
   };
 
   return (
@@ -78,17 +90,19 @@ const Presentation = ({
         <div className="flex flex-row">
           <div
             className="claps cursor-pointer flex flex-col items-center p-6 w-24 h-20 md:mr-2"
-            onClick={() => {}}
+            onClick={incrementClaps}
             onMouseEnter={toggleLabelsVisible}
             onMouseLeave={toggleLabelsVisible}
           >
             <img
               src="https://www.iconfinder.com/data/icons/celebration-and-party-8/96/clap-512.png"
               alt="clap"
-              className="clap-img filter-inverse"
+              className={`clap-img ${
+                theme === "Dark" ? "filter-inverse" : null
+              }`}
             />
             {labelsVisible.claps && (
-              <p className="hidden md:inline noselect">{clapsText}</p>
+              <p className="flex-row hidden md:inline noselect">{clapsText}</p>
             )}
           </div>
           <div
@@ -122,7 +136,7 @@ const Presentation = ({
             {social &&
               social.map((socNetwork) => (
                 // eslint-disable-next-line react/jsx-no-target-blank
-                <a href={socNetwork.url} target="_blank">
+                <a href={socNetwork.url} target="_blank" key={socNetwork.name}>
                   <img
                     src={socNetwork.icon}
                     className="w-16 px-2"
