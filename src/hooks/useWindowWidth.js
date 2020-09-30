@@ -6,11 +6,11 @@ const getWindowWidth = () => {
 };
 
 const useWindowWidth = () => {
-  const [width, setWidths] = useState(getWindowWidth());
+  const [width, setWidth] = useState(getWindowWidth());
 
   useEffect(() => {
     const handleResize = () => {
-      setWidths(getWindowWidth());
+      setWidth(getWindowWidth());
     };
 
     window.addEventListener("resize", handleResize);
