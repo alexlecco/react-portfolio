@@ -16,44 +16,92 @@ const Presentation = ({
 }) => {
   const [labelsVisible, setLabelsVisible] = useState({
     theme: false,
+    language: false,
+    claps: false,
     resume: false,
   });
   const profileTextColor =
     theme === "Dark" ? "text-teal-400" : "text-orange-900";
 
   const changeThemeText = theme === "Dark" ? "light theme" : "dark theme";
+  const languageText = "spanish";
+  const clapsText = "claps";
   const getMyResumeText = "get my resume";
 
   const toggleLabelsVisible = (e) => {
-    e.currentTarget.classList[0] === "theme"
-      ? setLabelsVisible({ ...labelsVisible, theme: !labelsVisible.theme })
-      : setLabelsVisible({ ...labelsVisible, resume: !labelsVisible.resume });
+    switch (e.currentTarget.classList[0]) {
+      case "theme":
+        setLabelsVisible({ ...labelsVisible, theme: !labelsVisible.theme });
+        break;
+      case "language":
+        setLabelsVisible({
+          ...labelsVisible,
+          language: !labelsVisible.language,
+        });
+        break;
+      case "claps":
+        setLabelsVisible({ ...labelsVisible, claps: !labelsVisible.claps });
+        break;
+      default:
+        setLabelsVisible({ ...labelsVisible, resume: !labelsVisible.resume });
+        break;
+    }
   };
 
   return (
     <div className="h-screen">
       <div className={`${theme}-transparent flex justify-between`}>
-        <div
-          className="theme cursor-pointer flex flex-col items-center p-8 w-20 h-20"
-          onClick={changeTheme}
-          onMouseEnter={toggleLabelsVisible}
-          onMouseLeave={toggleLabelsVisible}
-        >
-          <Brightness4Icon fontSize="small" />
-          {labelsVisible.theme && (
-            <p className="hidden md:inline noselect">{changeThemeText}</p>
-          )}
+        <div className="flex flex-row">
+          <div
+            className="theme cursor-pointer flex flex-col items-center p-8 w-20 h-20 md:mr-2"
+            onClick={changeTheme}
+            onMouseEnter={toggleLabelsVisible}
+            onMouseLeave={toggleLabelsVisible}
+          >
+            <Brightness4Icon fontSize="small" />
+            {labelsVisible.theme && (
+              <p className="hidden md:inline noselect">{changeThemeText}</p>
+            )}
+          </div>
+          <div
+            className="language cursor-pointer flex flex-col items-center p-6 mt-1 w-20 h-20"
+            onClick={() => {}}
+            onMouseEnter={toggleLabelsVisible}
+            onMouseLeave={toggleLabelsVisible}
+          >
+            <p>EN</p>
+            {labelsVisible.language && (
+              <p className="hidden md:inline noselect">{languageText}</p>
+            )}
+          </div>
         </div>
-        <div
-          className="resume cursor-pointer flex flex-col items-center p-8 w-20 h-20"
-          onClick={() => {}}
-          onMouseEnter={toggleLabelsVisible}
-          onMouseLeave={toggleLabelsVisible}
-        >
-          <GetAppIcon fontSize="small" />
-          {labelsVisible.resume && (
-            <p className="hidden md:inline noselect">{getMyResumeText}</p>
-          )}
+        <div className="flex flex-row">
+          <div
+            className="claps cursor-pointer flex flex-col items-center p-6 w-24 h-20 md:mr-2"
+            onClick={() => {}}
+            onMouseEnter={toggleLabelsVisible}
+            onMouseLeave={toggleLabelsVisible}
+          >
+            <img
+              src="https://www.iconfinder.com/data/icons/celebration-and-party-8/96/clap-512.png"
+              alt="clap"
+              className="clap-img filter-inverse"
+            />
+            {labelsVisible.claps && (
+              <p className="hidden md:inline noselect">{clapsText}</p>
+            )}
+          </div>
+          <div
+            className="resume cursor-pointer flex flex-col items-center p-8 w-20 h-20"
+            onClick={() => {}}
+            onMouseEnter={toggleLabelsVisible}
+            onMouseLeave={toggleLabelsVisible}
+          >
+            <GetAppIcon fontSize="small" />
+            {labelsVisible.resume && (
+              <p className="hidden md:inline noselect">{getMyResumeText}</p>
+            )}
+          </div>
         </div>
       </div>
       <div className="md:flex p-6 md:p-6">
