@@ -36,6 +36,7 @@ const App = () => {
         experience: snap.val().experience,
         skills: snap.val().skills,
         portfolio: snap.val().portfolio,
+        social: snap.val().social,
         _key: snap.key,
       };
 
@@ -59,6 +60,7 @@ const App = () => {
     experience,
     skills,
     portfolio,
+    social,
   } = user;
 
   if (loading)
@@ -103,7 +105,7 @@ const App = () => {
         </Element>
 
         <Element name="contactElement">
-          <Contact theme={theme} />
+          <Contact theme={theme} social={social} />
         </Element>
 
         <Footer name={name} theme={theme} />
