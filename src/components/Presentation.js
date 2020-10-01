@@ -22,12 +22,13 @@ const Presentation = ({
     claps: false,
     resume: false,
   });
+  const [language, setLanguage] = useState("english");
   const [localClaps, setLocalClaps] = useState(claps);
 
   const profileTextColor =
     theme === "Dark" ? "text-teal-400" : "text-orange-900";
   const changeThemeText = theme === "Dark" ? "light theme" : "dark theme";
-  const languageText = "spanish";
+  const languageText = language === "english" ? "a español" : "to english";
   const clapsText = `${claps} claps`;
   const getMyResumeText = "get my resume";
 
@@ -37,7 +38,7 @@ const Presentation = ({
   }, [localClaps]);
 
   const toggleLabelsVisible = (e) => {
-    switch (e.currentTarget.classList[0]) {
+    switch (e.currentTarget.classList[1]) {
       case "theme":
         setLabelsVisible({ ...labelsVisible, theme: !labelsVisible.theme });
         break;
@@ -56,6 +57,10 @@ const Presentation = ({
     }
   };
 
+  const handleChangeLanguage = () => {
+    setLanguage(language === "english" ? "spanish" : "english");
+  };
+
   const incrementClaps = () => {
     setLocalClaps(claps + 1);
   };
@@ -65,55 +70,71 @@ const Presentation = ({
       <div className={`${theme}-transparent flex justify-between`}>
         <div className="flex flex-row">
           <div
-            className="theme cursor-pointer flex flex-col items-center p-8 w-20 h-20 md:mr-2"
+            className="flex flex-col items-center p-8 w-20 h-20 md:mr-2"
             onClick={changeTheme}
-            onMouseEnter={toggleLabelsVisible}
-            onMouseLeave={toggleLabelsVisible}
           >
-            <Brightness4Icon fontSize="small" />
+            <Brightness4Icon
+              fontSize="small"
+              className="theme cursor-pointer"
+              onMouseEnter={toggleLabelsVisible}
+              onMouseLeave={toggleLabelsVisible}
+            />
             {labelsVisible.theme && (
-              <p className="hidden md:inline noselect">{changeThemeText}</p>
+              <p className="hidden md:inline noselect text-sm">
+                {changeThemeText}
+              </p>
             )}
           </div>
           <div
-            className="language cursor-pointer flex flex-col items-center p-6 mt-1 w-20 h-20"
-            onClick={() => {}}
-            onMouseEnter={toggleLabelsVisible}
-            onMouseLeave={toggleLabelsVisible}
+            className="flex flex-col items-center p-6 mt-1 w-20 h-20"
+            onClick={handleChangeLanguage}
           >
-            <p>EN</p>
+            <p
+              className="cursor-pointer language hidden md:inline noselect"
+              onMouseEnter={toggleLabelsVisible}
+              onMouseLeave={toggleLabelsVisible}
+            >
+              {language === "english" ? "EN" : "ES"}
+            </p>
             {labelsVisible.language && (
-              <p className="hidden md:inline noselect">{languageText}</p>
+              <p className="text-sm">{languageText}</p>
             )}
           </div>
         </div>
         <div className="flex flex-row">
           <div
-            className="claps cursor-pointer flex flex-col items-center p-6 w-24 h-20 md:mr-2"
+            className="flex flex-col items-center p-6 w-24 h-20 md:mr-2"
             onClick={incrementClaps}
-            onMouseEnter={toggleLabelsVisible}
-            onMouseLeave={toggleLabelsVisible}
           >
             <img
               src="https://www.iconfinder.com/data/icons/celebration-and-party-8/96/clap-512.png"
               alt="clap"
-              className={`clap-img ${
+              className={`cursor-pointer claps clap-img ${
                 theme === "Dark" ? "filter-inverse" : null
               }`}
+              onMouseEnter={toggleLabelsVisible}
+              onMouseLeave={toggleLabelsVisible}
             />
             {labelsVisible.claps && (
-              <p className="flex-row hidden md:inline noselect">{clapsText}</p>
+              <p className="flex-row hidden md:inline noselect text-sm">
+                {clapsText}
+              </p>
             )}
           </div>
           <div
-            className="resume cursor-pointer flex flex-col items-center p-8 w-20 h-20"
+            className="flex flex-col items-center p-8 w-20 h-20"
             onClick={() => {}}
-            onMouseEnter={toggleLabelsVisible}
-            onMouseLeave={toggleLabelsVisible}
           >
-            <GetAppIcon fontSize="small" />
+            <GetAppIcon
+              fontSize="small"
+              className="resume cursor-pointer"
+              onMouseEnter={toggleLabelsVisible}
+              onMouseLeave={toggleLabelsVisible}
+            />
             {labelsVisible.resume && (
-              <p className="hidden md:inline noselect">{getMyResumeText}</p>
+              <p className="hidden md:inline noselect text-sm">
+                {getMyResumeText}
+              </p>
             )}
           </div>
         </div>
