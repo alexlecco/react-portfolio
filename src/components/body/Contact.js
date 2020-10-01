@@ -7,7 +7,7 @@ const GoalsContainer = ({ theme, social }) => {
 
   return (
     <div
-      className={`h-screen flex flex-col justify-center align-items-center ${theme} h-auto pb-20`}
+      className={`contact-height flex flex-col justify-center align-items-center ${theme} h-auto pb-20`}
     >
       <h1 className="text-center text-lg pt-8 mb-4">
         Leave me a message
@@ -15,7 +15,7 @@ const GoalsContainer = ({ theme, social }) => {
           📲
         </span>
       </h1>
-      <div className="flex align-middle justify-center">
+      <div className="flex align-middle justify-center mb-10">
         {social &&
           social
             .filter((socNetwork) => socNetwork.contact)
@@ -29,6 +29,12 @@ const GoalsContainer = ({ theme, social }) => {
                 />
               </a>
             ))}
+      </div>
+      <div className="md:w-1/2 md:self-center">
+        <img
+          src="https://images-na.ssl-images-amazon.com/images/I/51zQkUsJpiL._AC_.jpg"
+          alt="god"
+        />
       </div>
     </div>
   );

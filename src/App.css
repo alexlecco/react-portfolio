@@ -130,3 +130,7 @@ img,
 video {
   width: 150%;
 }
+
+.contact-height {
+  height: 90vh;
+}
