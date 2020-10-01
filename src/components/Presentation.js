@@ -90,7 +90,7 @@ const Presentation = ({
             onClick={handleChangeLanguage}
           >
             <p
-              className="cursor-pointer language hidden md:inline noselect"
+              className="cursor-pointer language noselect"
               onMouseEnter={toggleLabelsVisible}
               onMouseLeave={toggleLabelsVisible}
             >
@@ -123,7 +123,7 @@ const Presentation = ({
           </div>
           <div
             className="flex flex-col items-center p-8 w-20 h-20"
-            onClick={() => {}}
+            onClick={() => alert("coming soon")}
           >
             <GetAppIcon
               fontSize="small"
