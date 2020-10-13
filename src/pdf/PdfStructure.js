@@ -7,6 +7,7 @@ import Studies from "./page1/Studies";
 import Skills from "./page2/Skills";
 import Laguages from "./page3/Laguages";
 import Experience from "./page3/Experience";
+import Mentoring from "./page4/Mentoring";
 
 const PdfStructure = ({ data }) => {
   return (
@@ -30,6 +31,10 @@ const PdfStructure = ({ data }) => {
         <Laguages data={data} styles={styles} />
         <Experience data={data} styles={styles} />
       </Page>
+
+      <Page style={styles.pageTop}>
+        <Mentoring data={data} styles={styles} />
+      </Page>
     </Document>
   );
 };
@@ -42,6 +47,13 @@ const styles = StyleSheet.create({
   page: {
     flex: 1,
     justifyContent: "space-around",
+    padding: 60,
+    color: "#8D8F8D",
+    fontSize: 15,
+  },
+  pageTop: {
+    flex: 1,
+    justifyContent: "flex-start",
     padding: 60,
     color: "#8D8F8D",
     fontSize: 15,

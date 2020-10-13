@@ -23,8 +23,8 @@ const App = () => {
     listenForUser(userRef);
   }, []);
 
-  const listenForUser = (userRef) => {
-    userRef.on("value", (snap) => {
+  const listenForUser = userRef => {
+    userRef.on("value", snap => {
       const user = {
         name: snap.val().name,
         profile: snap.val().profile,
@@ -35,6 +35,7 @@ const App = () => {
         goals: snap.val().goals,
         studies: snap.val().studies,
         experience: snap.val().experience,
+        mentoring: snap.val().mentoring,
         skills: snap.val().skills,
         languages: snap.val().languages,
         portfolio: snap.val().portfolio,
@@ -62,6 +63,7 @@ const App = () => {
     goals,
     studies,
     experience,
+    mentoring,
     skills,
     languages,
     portfolio,
@@ -71,14 +73,14 @@ const App = () => {
 
   if (loading)
     return (
-      <div className="h-screen bg-gray-400 flex flex-col items-center justify-center">
+      <div className='h-screen bg-gray-400 flex flex-col items-center justify-center'>
         loading...
       </div>
     );
 
   return (
     <div
-      className="bg-fixed bg-center bg-cover md:pr-48 md:pl-48 select-none md:select-text"
+      className='bg-fixed bg-center bg-cover md:pr-48 md:pl-48 select-none md:select-text'
       style={{
         backgroundImage: `url(${theme === "Dark" ? coverdark : coverlight})`,
       }}
@@ -99,25 +101,26 @@ const App = () => {
           skills={skills}
           languages={languages}
           experience={experience}
+          mentoring={mentoring}
         />
 
-        <Element name="goalsElement">
+        <Element name='goalsElement'>
           <GoalsContainer theme={theme} goals={goals} />
         </Element>
 
-        <Element name="skillsElement">
+        <Element name='skillsElement'>
           <SkillsContainer theme={theme} skills={skills} />
         </Element>
 
-        <Element name="experienceElement">
+        <Element name='experienceElement'>
           <ExperienceContainer theme={theme} experience={experience} />
         </Element>
 
-        <Element name="portfolioElement">
+        <Element name='portfolioElement'>
           <PortfolioContainer theme={theme} portfolio={portfolio} />
         </Element>
 
-        <Element name="contactElement">
+        <Element name='contactElement'>
           <Contact theme={theme} social={social} />
         </Element>
 
