@@ -43,6 +43,18 @@ const styles = StyleSheet.create({
     marginTop: 20,
     marginBottom: 20
   },
+  midSectionContainer: {
+    flex: 1,
+    flexDirection: 'row',
+    flexWrap: 'wrap'
+  },
+  midSection: {
+    justifyContent: 'flex-start',
+    alignItems: 'flex-start',
+    width: '50%',
+    height: 200,
+    paddingRight: 20
+  },
   sectionTitle: {
     color: '#FF006B',
     paddingBottom: 10,
@@ -52,11 +64,12 @@ const styles = StyleSheet.create({
     marginBottom: 10
   },
   sectionSubitem: {
-    marginBottom: 5
+    marginBottom: 5,
+    paddingLeft: 7
   },
   sectionSubtitle: {
     color: "#811ADA",
-    marginBottom: 4
+    marginBottom: 10
   },
   image: {
     width: '20',
