@@ -2,6 +2,8 @@ import React, { useState, useEffect } from "react";
 import GetAppIcon from "@material-ui/icons/GetApp";
 import Brightness4Icon from "@material-ui/icons/Brightness4";
 import NavigatorMenu from "./NavigatorMenu";
+import { PDFDownloadLink } from "@react-pdf/renderer"
+import PdfStructure from '../pdf/PdfStructure'
 import { firebaseApp } from "../firebase";
 
 const Presentation = ({
@@ -65,6 +67,10 @@ const Presentation = ({
     setLocalClaps(claps + 1);
   };
 
+  const userData = {
+    name: "alex"
+  }
+
   return (
     <div className="h-screen">
       <div className={`${theme}-transparent flex justify-between`}>
@@ -122,20 +128,25 @@ const Presentation = ({
             )}
           </div>
           <div
-            className="flex flex-col items-center p-8 w-20 h-20"
-            onClick={() => alert("coming soon")}
+            className="p-8 w-20 h-20"
+            onMouseEnter={toggleLabelsVisible}
+            onMouseLeave={toggleLabelsVisible}
           >
-            <GetAppIcon
-              fontSize="small"
-              className="resume cursor-pointer"
-              onMouseEnter={toggleLabelsVisible}
-              onMouseLeave={toggleLabelsVisible}
-            />
-            {labelsVisible.resume && (
-              <p className="hidden md:inline noselect text-sm">
-                {getMyResumeText}
-              </p>
-            )}
+            <PDFDownloadLink
+              document={<PdfStructure data={userData} />}
+              fileName="alex-resume.pdf"
+              className="flex flex-col items-center"
+            >
+              <GetAppIcon
+                fontSize="small"
+                className="resume cursor-pointer"
+              />
+              {labelsVisible.resume && (
+                <p className="hidden md:inline noselect text-sm">
+                  {getMyResumeText}
+                </p>
+              )}
+            </PDFDownloadLink>
           </div>
         </div>
       </div>
