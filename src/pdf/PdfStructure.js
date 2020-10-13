@@ -1,9 +1,9 @@
 import React from 'react'
-import {
-  Page,
-  Text,
-  Document,
-} from "@react-pdf/renderer";
+import { Document, Page, StyleSheet } from "@react-pdf/renderer";
+import Presentation from './page1/Presentation';
+import Profile from './page1/Profile';
+import Goals from './page1/Goals';
+import Studies from './page1/Studies';
 
 const PdfStructure = ({data}) => {
   return (
@@ -12,15 +12,20 @@ const PdfStructure = ({data}) => {
       subject="Resume of Alex"
       title="Alex Villecco resume"
     >
-      <Page>
-        <Text>Hi! i'm {data.name}</Text>
-        <Text>I live in Tucumán, Argentina</Text>
-        <Text>I'm 30 years old</Text>
-        <Text>my phone: +54 381 153844535</Text>
-        <Text>my email:​ alexlecco24@gmail.com</Text>
+      <Page style={styles.page}>
+        <Presentation data={data} />
+        <Profile data={data} />
+        <Goals data={data} />
+        <Studies data={data} />
       </Page>
     </Document>
   )
 }
+
+const styles = StyleSheet.create({
+  page: {
+    padding: 30
+  }
+})
 
 export default PdfStructure

@@ -17,6 +17,8 @@ const Presentation = ({
   scroller,
   social,
   claps,
+  goals,
+  studies
 }) => {
   const [labelsVisible, setLabelsVisible] = useState({
     theme: false,
@@ -68,7 +70,11 @@ const Presentation = ({
   };
 
   const userData = {
-    name: "alex"
+    name,
+    social,
+    profile,
+    goals,
+    studies
   }
 
   return (

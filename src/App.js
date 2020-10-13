@@ -33,6 +33,7 @@ const App = () => {
         coverdark: snap.val().coverdark,
         coverlight: snap.val().coverlight,
         goals: snap.val().goals,
+        studies: snap.val().studies,
         experience: snap.val().experience,
         skills: snap.val().skills,
         portfolio: snap.val().portfolio,
@@ -58,6 +59,7 @@ const App = () => {
     coverdark,
     coverlight,
     goals,
+    studies,
     experience,
     skills,
     portfolio,
@@ -90,6 +92,8 @@ const App = () => {
           scroller={scroller}
           social={social}
           claps={claps}
+          goals={goals}
+          studies={studies}
         />
 
         <Element name="goalsElement">
