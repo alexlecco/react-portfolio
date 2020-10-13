@@ -1,12 +1,12 @@
 import React from 'react'
 import { View, Text } from "@react-pdf/renderer";
 
-function Goals({data}) {
+function Goals({data, styles}) {
   return (
-    <View>
-      <Text>Professional Goals</Text>
+    <View style={styles.section}>
+      <Text style={styles.sectionTitle}>Professional Goals</Text>
       {data.goals.map(goal => (
-        <Text>{goal}</Text>
+        <Text key={goal} style={styles.sectionItem}>• {goal}</Text>
       ))}
     </View>
   )

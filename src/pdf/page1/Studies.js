@@ -1,10 +1,10 @@
 import React from 'react'
 import { View, Text } from "@react-pdf/renderer";
 
-function Studies({data}) {
+function Studies({data, styles}) {
   return (
-    <View>
-      <Text>My studies</Text>
+    <View style={styles.section}>
+      <Text style={styles.sectionTitle}>My studies</Text>
       <Text>{data.studies}</Text>
     </View>
   )
