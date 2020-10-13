@@ -36,6 +36,7 @@ const App = () => {
         studies: snap.val().studies,
         experience: snap.val().experience,
         skills: snap.val().skills,
+        languages: snap.val().languages,
         portfolio: snap.val().portfolio,
         social: snap.val().social,
         claps: snap.val().claps,
@@ -62,6 +63,7 @@ const App = () => {
     studies,
     experience,
     skills,
+    languages,
     portfolio,
     social,
     claps,
@@ -95,6 +97,8 @@ const App = () => {
           goals={goals}
           studies={studies}
           skills={skills}
+          languages={languages}
+          experience={experience}
         />
 
         <Element name="goalsElement">
