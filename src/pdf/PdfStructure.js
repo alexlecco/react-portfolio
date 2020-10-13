@@ -4,6 +4,7 @@ import Presentation from './page1/Presentation';
 import Profile from './page1/Profile';
 import Goals from './page1/Goals';
 import Studies from './page1/Studies';
+import Skills from './page2/Skills';
 
 const PdfStructure = ({data}) => {
   return (
@@ -17,6 +18,10 @@ const PdfStructure = ({data}) => {
         <Profile data={data} styles={styles} />
         <Goals data={data} styles={styles} />
         <Studies data={data} styles={styles} />
+      </Page>
+
+      <Page style={styles.page}>
+        <Skills data={data} styles={styles} />
       </Page>
     </Document>
   )
@@ -44,7 +49,14 @@ const styles = StyleSheet.create({
     paddingLeft: 10,
   },
   sectionItem: {
-    marginBottom: 3
+    marginBottom: 10
+  },
+  sectionSubitem: {
+    marginBottom: 5
+  },
+  sectionSubtitle: {
+    color: "#811ADA",
+    marginBottom: 4
   },
   image: {
     width: '20',

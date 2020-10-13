@@ -18,7 +18,8 @@ const Presentation = ({
   social,
   claps,
   goals,
-  studies
+  studies,
+  skills
 }) => {
   const [labelsVisible, setLabelsVisible] = useState({
     theme: false,
@@ -74,7 +75,8 @@ const Presentation = ({
     social,
     profile,
     goals,
-    studies
+    studies,
+    skills
   }
 
   return (

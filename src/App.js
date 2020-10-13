@@ -94,6 +94,7 @@ const App = () => {
           claps={claps}
           goals={goals}
           studies={studies}
+          skills={skills}
         />
 
         <Element name="goalsElement">
