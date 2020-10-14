@@ -1,7 +1,9 @@
 import React from "react";
 import ArrowForwardIosIcon from "@material-ui/icons/ArrowForwardIos";
 
-const GoalsContainer = ({ theme, goals, t }) => {
+const GoalsContainer = ({ theme, goals, t, language }) => {
+  const getGoalText = goal => (language === "english" ? goal.en : goal.es);
+
   return (
     <div
       className={`min-h-screen flex flex-col justify-center align-items-center ${theme} h-auto pl-8 pr-8 md:pr-20 md:pl-20 pb-20`}
@@ -17,7 +19,7 @@ const GoalsContainer = ({ theme, goals, t }) => {
           goals.map(goal => (
             <div className='flex flex-row justify-start pb-2' key={goal}>
               <ArrowForwardIosIcon />
-              <span className='pl-2'>{goal}</span>
+              <span className='pl-2'>{getGoalText(goal)}</span>
             </div>
           ))}
       </div>

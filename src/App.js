@@ -131,7 +131,7 @@ const App = () => {
         />
 
         <Element name='goalsElement'>
-          <GoalsContainer theme={theme} goals={goals} t={t} />
+          <GoalsContainer theme={theme} goals={goals} t={t} language={language} />
         </Element>
 
         <Element name='skillsElement'>

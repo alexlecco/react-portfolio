@@ -81,6 +81,7 @@ const Presentation = ({
   };
 
   const userData = {
+    language,
     name,
     city,
     country,
