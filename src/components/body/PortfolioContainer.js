@@ -1,7 +1,7 @@
 import React from "react";
 import Portfolio from "./Portfolio";
 
-const PorfolioContainer = ({ theme, portfolio, t }) => {
+const PorfolioContainer = ({ theme, portfolio, t, language }) => {
   let webProjects = [];
   let mobileProjects = [];
   portfolio.projects.forEach(project =>
@@ -31,23 +31,25 @@ const PorfolioContainer = ({ theme, portfolio, t }) => {
       <div className='flex flex-col md:flex-row'>
         <div className='w-full text-left pt-8'>
           <h2 className='mb-2'>Web</h2>
-          {webProjects.map(project => (
+          {webProjects.map((project, index) => (
             <Portfolio
               project={project}
               typeProject='web'
               theme={theme}
-              key={project.name}
+              key={index}
+              language={language}
             />
           ))}
         </div>
         <div className='w-full text-left pt-8'>
           <h2 className='mb-2'>Mobile</h2>
-          {mobileProjects.map(project => (
+          {mobileProjects.map((project, index) => (
             <Portfolio
               project={project}
               typeProject='mobile'
               theme={theme}
-              key={project.name}
+              key={index}
+              language={language}
             />
           ))}
         </div>

@@ -8,9 +8,9 @@ function Experience({ data, styles }) {
   return (
     <View style={styles.section}>
       <Text style={styles.sectionTitle}>Work Experience</Text>
-      {data.experience.map(job =>
+      {data.experience.map((job, index) =>
         job.description ? (
-          <Text key={job.description} style={styles.sectionItem}>
+          <Text key={index} style={styles.sectionItem}>
             • {getDescription(job.description)}
           </Text>
         ) : (

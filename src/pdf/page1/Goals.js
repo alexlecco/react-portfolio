@@ -7,11 +7,13 @@ function Goals({ data, styles }) {
   return (
     <View style={styles.section}>
       <Text style={styles.sectionTitle}>Professional Goals</Text>
-      {data.goals.map(goal => (
-        <Text key={goal} style={styles.sectionItem}>
-          • {getGoalText(goal)}
-        </Text>
-      ))}
+      {data.goals.map((goal, index) => {
+        return (
+          <Text key={index} style={styles.sectionItem}>
+            • {getGoalText(goal)}
+          </Text>
+        );
+      })}
     </View>
   );
 }

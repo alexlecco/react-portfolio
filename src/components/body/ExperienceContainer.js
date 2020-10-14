@@ -17,12 +17,9 @@ const ExperienceContainer = ({ theme, experience, t, language }) => {
       </h1>
       <div className='text-left pt-8'>
         {experience &&
-          experience.map(job =>
+          experience.map((job, index) =>
             job.description ? (
-              <div
-                className='flex flex-row justify-start pb-2'
-                key={job.description}
-              >
+              <div className='flex flex-row justify-start pb-2' key={index}>
                 <CheckIcon />
                 <span className='pl-2'>{getDescription(job.description)}</span>
               </div>

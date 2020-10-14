@@ -10,7 +10,7 @@ const Skill = ({ theme, name, list }) => {
   const itemTextColor = theme === "Dark" ? "text-teal-400" : "text-orange-800";
 
   const icon = (
-    <div className="text-center text-xl">
+    <div className='text-center text-xl'>
       {name === "front-end" ? (
         <DesktopWindowsIcon />
       ) : name === "back-end" ? (
@@ -29,14 +29,14 @@ const Skill = ({ theme, name, list }) => {
 
   return (
     <div className={`my-8 flex w-full md:w-1/3`}>
-      <div className="w-full md:text-left md:mx-6">
+      <div className='w-full md:text-left md:mx-6'>
         {icon}
-        <h3 className="text-xl text-center">{name}</h3>
+        <h3 className='text-xl text-center'>{name}</h3>
         <div
           className={`${itemTextColor} flex flex-col justify-center text-center px-2 py-2 md:px-0`}
         >
-          {list.map((item) => (
-            <div key={item}>{item}</div>
+          {list.map((item, index) => (
+            <div key={index}>{item}</div>
           ))}
         </div>
       </div>

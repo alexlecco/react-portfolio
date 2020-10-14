@@ -16,8 +16,8 @@ const GoalsContainer = ({ theme, goals, t, language }) => {
       </h1>
       <div className='text-left pt-8'>
         {goals &&
-          goals.map(goal => (
-            <div className='flex flex-row justify-start pb-2' key={goal}>
+          goals.map((goal, index) => (
+            <div className='flex flex-row justify-start pb-2' key={index}>
               <ArrowForwardIosIcon />
               <span className='pl-2'>{getGoalText(goal)}</span>
             </div>
