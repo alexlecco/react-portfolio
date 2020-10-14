@@ -43,6 +43,7 @@ const styles = StyleSheet.create({
   documentTitle: {
     fontSize: 20,
     marginBottom: 10,
+    fontWeight: "bold",
   },
   page: {
     flex: 1,

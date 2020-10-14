@@ -27,6 +27,11 @@ const App = () => {
     userRef.on("value", snap => {
       const user = {
         name: snap.val().name,
+        city: snap.val().city,
+        country: snap.val().country,
+        birthday: snap.val().birthday,
+        phone: snap.val().phone,
+        email: snap.val().email,
         profile: snap.val().profile,
         flag: snap.val().flag,
         avatar: snap.val().avatar,
@@ -57,6 +62,11 @@ const App = () => {
     avatar,
     flag,
     name,
+    city,
+    country,
+    birthday,
+    phone,
+    email,
     profile,
     coverdark,
     coverlight,
@@ -90,6 +100,11 @@ const App = () => {
           avatar={avatar}
           flag={flag}
           name={name}
+          city={city}
+          country={country}
+          birthday={birthday}
+          phone={phone}
+          email={email}
           profile={profile}
           theme={theme}
           changeTheme={changeTheme}

@@ -10,6 +10,11 @@ const Presentation = ({
   //flag,
   avatar,
   name,
+  city,
+  country,
+  birthday,
+  phone,
+  email,
   profile,
   description,
   theme,
@@ -74,6 +79,11 @@ const Presentation = ({
 
   const userData = {
     name,
+    city,
+    country,
+    birthday,
+    phone,
+    email,
     social,
     profile,
     goals,
