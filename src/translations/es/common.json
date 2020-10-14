@@ -1,0 +1,31 @@
+{
+  "presentation": {
+    "item1": "objetivos",
+    "item2": "habilidades",
+    "item3": "experiencia",
+    "item4": "portfolio",
+    "item5": "contacto"
+  },
+  "titles": {
+    "title1": "Metas Personales",
+    "title2": "Habilidades Técnicas",
+    "title3": "Experiencia Laboral",
+    "title4": {
+      "title": "Porfolio Personal",
+      "subtitle": {
+        "web": "coloque el cursor sobre el enlace para ver la descripción",
+        "mobile": "mantenga presionado el enlace para ver la descripción"
+      }
+    },
+    "title5": "Dejame un Mensaje"
+  },
+  "topbar": {
+    "button1": {
+      "light": "tema claro",
+      "dark": "tema oscuro"
+    },
+    "button2": "to english",
+    "button3": "aplausos",
+    "button4": "descargá mi CV"
+  }
+}

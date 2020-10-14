@@ -3,15 +3,15 @@ import KeyboardArrowDownIcon from "@material-ui/icons/KeyboardArrowDown";
 import KeyboardArrowUpIcon from "@material-ui/icons/KeyboardArrowUp";
 import useWindowWidth from "../hooks/useWindowWidth";
 
-function NavigatorMenu({ theme, scroller }) {
+function NavigatorMenu({ theme, scroller, t }) {
   const [openedMenu, setOpenedMenu] = useState(false);
   const { width } = useWindowWidth();
 
   const toggleMenu = () => {
-    setOpenedMenu((prevOpenedMenu) => !prevOpenedMenu);
+    setOpenedMenu(prevOpenedMenu => !prevOpenedMenu);
   };
 
-  const scrollToElement = (element) => {
+  const scrollToElement = element => {
     scroller.scrollTo(element, {
       duration: 800,
       delay: 0,
@@ -26,14 +26,14 @@ function NavigatorMenu({ theme, scroller }) {
           {openedMenu ? (
             <div onClick={toggleMenu}>
               <KeyboardArrowUpIcon
-                fontSize="large"
+                fontSize='large'
                 className={`${theme}-transparent cursor-pointer mb-2`}
               />
             </div>
           ) : (
             <div onClick={toggleMenu}>
               <KeyboardArrowDownIcon
-                fontSize="large"
+                fontSize='large'
                 className={`${theme}-transparent cursor-pointer mb-2`}
               />
             </div>
@@ -42,29 +42,33 @@ function NavigatorMenu({ theme, scroller }) {
             <ul
               className={`${theme}-transparent md:flex md:flex-row md:justify-center md:align-middle md:pb-8`}
             >
-              <li className="md:pr-32 py-2 mb-2 md:pb-0 cursor-pointer">
+              <li className='md:pr-32 py-2 mb-2 md:pb-0 cursor-pointer'>
                 <p
-                  className="mb-2 background-shadow"
+                  className='mb-2 background-shadow'
                   onClick={() => scrollToElement("goalsElement")}
                 >
-                  goals
+                  {t("presentation.item1")}
                 </p>
               </li>
-              <li className="md:pr-32 py-2 my-2 md:pb-0 cursor-pointer">
-                <p onClick={() => scrollToElement("skillsElement")}>skills</p>
+              <li className='md:pr-32 py-2 my-2 md:pb-0 cursor-pointer'>
+                <p onClick={() => scrollToElement("skillsElement")}>
+                  {t("presentation.item2")}
+                </p>
               </li>
-              <li className="md:pr-32 py-2 my-2 md:pb-0 cursor-pointer">
+              <li className='md:pr-32 py-2 my-2 md:pb-0 cursor-pointer'>
                 <p onClick={() => scrollToElement("experienceElement")}>
-                  experience
+                  {t("presentation.item3")}
                 </p>
               </li>
-              <li className="md:pr-32 py-2 my-2 md:pb-0 cursor-pointer">
+              <li className='md:pr-32 py-2 my-2 md:pb-0 cursor-pointer'>
                 <p onClick={() => scrollToElement("portfolioElement")}>
-                  portfolio
+                  {t("presentation.item4")}
                 </p>
               </li>
-              <li className="py-2 my-2 md:pb-0 cursor-pointer">
-                <p onClick={() => scrollToElement("contactElement")}>contact</p>
+              <li className='py-2 my-2 md:pb-0 cursor-pointer'>
+                <p onClick={() => scrollToElement("contactElement")}>
+                  {t("presentation.item5")}
+                </p>
               </li>
             </ul>
           )}
@@ -74,25 +78,29 @@ function NavigatorMenu({ theme, scroller }) {
           <ul
             className={`${theme}-transparent md:flex md:flex-row md:justify-center md:align-middle md:pb-8`}
           >
-            <li className="md:pr-32 pb-10 md:pb-0 cursor-pointer">
-              <p onClick={() => scrollToElement("goalsElement")}>goals</p>
+            <li className='md:pr-32 pb-10 md:pb-0 cursor-pointer'>
+              <p onClick={() => scrollToElement("goalsElement")}>
+                {t("presentation.item1")}
+              </p>
             </li>
-            <li className="md:pr-32 pb-10 md:pb-0 cursor-pointer">
-              <p onClick={() => scrollToElement("skillsElement")}>skills</p>
+            <li className='md:pr-32 pb-10 md:pb-0 cursor-pointer'>
+              <p onClick={() => scrollToElement("skillsElement")}>
+                {t("presentation.item2")}
+              </p>
             </li>
-            <li className="md:pr-32 pb-10 md:pb-0 cursor-pointer">
+            <li className='md:pr-32 pb-10 md:pb-0 cursor-pointer'>
               <p onClick={() => scrollToElement("experienceElement")}>
-                experience
+                {t("presentation.item3")}
               </p>
             </li>
-            <li className="md:pr-32 pb-10 md:pb-0 cursor-pointer">
+            <li className='md:pr-32 pb-10 md:pb-0 cursor-pointer'>
               <p onClick={() => scrollToElement("portfolioElement")}>
-                portfolio
+                {t("presentation.item4")}
               </p>
             </li>
-            <li className="pb-10 md:pb-0 cursor-pointer">
+            <li className='pb-10 md:pb-0 cursor-pointer'>
               <p onClick={() => scrollToElement("contactElement")}>
-                <span className="no-select">contact</span>
+                <span className='no-select'>{t("presentation.item5")}</span>
               </p>
             </li>
           </ul>

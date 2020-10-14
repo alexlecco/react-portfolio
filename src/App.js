@@ -9,14 +9,17 @@ import PortfolioContainer from "./components/body/PortfolioContainer";
 import Contact from "./components/body/Contact";
 import * as Scroll from "react-scroll";
 import database from "./firebase";
+import { useTranslation } from "react-i18next";
 
 let Element = Scroll.Element;
-var scroller = Scroll.scroller;
+let scroller = Scroll.scroller;
 
 const App = () => {
   const [loading, setLoading] = useState(true);
   const [theme, setTheme] = useState("Dark");
   const [user, setUser] = useState({});
+  const [language, setLanguage] = useState("english");
+  const { t, i18n } = useTranslation("common");
 
   useEffect(() => {
     const userRef = database.ref().child("data");
@@ -56,6 +59,11 @@ const App = () => {
 
   const changeTheme = () => {
     setTheme(theme === "Dark" ? "Light" : "Dark");
+  };
+
+  const changeLanguage = lang => {
+    i18n.changeLanguage(lang === "english" ? "es" : "en");
+    setLanguage(lang === "english" ? "spanish" : "english");
   };
 
   const {
@@ -108,6 +116,8 @@ const App = () => {
           profile={profile}
           theme={theme}
           changeTheme={changeTheme}
+          changeLanguage={changeLanguage}
+          language={language}
           scroller={scroller}
           social={social}
           claps={claps}
@@ -117,26 +127,27 @@ const App = () => {
           languages={languages}
           experience={experience}
           mentoring={mentoring}
+          t={t}
         />
 
         <Element name='goalsElement'>
-          <GoalsContainer theme={theme} goals={goals} />
+          <GoalsContainer theme={theme} goals={goals} t={t} />
         </Element>
 
         <Element name='skillsElement'>
-          <SkillsContainer theme={theme} skills={skills} />
+          <SkillsContainer theme={theme} skills={skills} t={t} />
         </Element>
 
         <Element name='experienceElement'>
-          <ExperienceContainer theme={theme} experience={experience} />
+          <ExperienceContainer theme={theme} experience={experience} t={t} />
         </Element>
 
         <Element name='portfolioElement'>
-          <PortfolioContainer theme={theme} portfolio={portfolio} />
+          <PortfolioContainer theme={theme} portfolio={portfolio} t={t} />
         </Element>
 
         <Element name='contactElement'>
-          <Contact theme={theme} social={social} />
+          <Contact theme={theme} social={social} t={t} />
         </Element>
 
         <Footer name={name} theme={theme} />

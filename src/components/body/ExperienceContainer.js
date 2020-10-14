@@ -1,13 +1,13 @@
 import React from "react";
 import CheckIcon from "@material-ui/icons/Check";
 
-const ExperienceContainer = ({ theme, experience }) => {
+const ExperienceContainer = ({ theme, experience, t }) => {
   return (
     <div
       className={`min-h-screen flex flex-col justify-center align-items-center ${theme} h-auto pl-8 pr-8 md:pr-20 md:pl-20 pb-20`}
     >
       <h1 className='text-center md:text-left md:pl-24 text-lg pt-8'>
-        Work Experience
+        {t("titles.title3")}
         <span className='ml-2' role='img' aria-label='Work Experience'>
           👷
         </span>

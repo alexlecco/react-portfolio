@@ -19,6 +19,8 @@ const Presentation = ({
   description,
   theme,
   changeTheme,
+  changeLanguage,
+  language,
   scroller,
   social,
   claps,
@@ -28,6 +30,7 @@ const Presentation = ({
   languages,
   experience,
   mentoring,
+  t,
 }) => {
   const [labelsVisible, setLabelsVisible] = useState({
     theme: false,
@@ -35,14 +38,14 @@ const Presentation = ({
     claps: false,
     resume: false,
   });
-  const [language, setLanguage] = useState("english");
   const [localClaps, setLocalClaps] = useState(claps);
 
   const profileTextColor = theme === "Dark" ? "text-teal-400" : "text-orange-900";
-  const changeThemeText = theme === "Dark" ? "light theme" : "dark theme";
-  const languageText = language === "english" ? "a español" : "to english";
-  const clapsText = `${claps} claps`;
-  const getMyResumeText = "get my resume";
+  const changeThemeText =
+    theme === "Dark" ? t("topbar.button1.light") : t("topbar.button1.dark");
+  const languageText = t("topbar.button2");
+  const clapsText = `${claps} ${t("topbar.button3")}`;
+  const getMyResumeText = t("topbar.button4");
 
   useEffect(() => {
     const userRef = database.ref().child("data").child("claps");
@@ -70,7 +73,7 @@ const Presentation = ({
   };
 
   const handleChangeLanguage = () => {
-    setLanguage(language === "english" ? "spanish" : "english");
+    changeLanguage(language);
   };
 
   const incrementClaps = () => {
@@ -198,7 +201,7 @@ const Presentation = ({
           </h3>
         </div>
       </div>
-      <NavigatorMenu theme={theme} scroller={scroller} />
+      <NavigatorMenu theme={theme} scroller={scroller} t={t} />
     </div>
   );
 };

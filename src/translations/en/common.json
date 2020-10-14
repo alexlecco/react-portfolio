@@ -1,0 +1,31 @@
+{
+  "presentation": {
+    "item1": "goals",
+    "item2": "skills",
+    "item3": "experience",
+    "item4": "porfolio",
+    "item5": "contact"
+  },
+  "titles": {
+    "title1": "Professional Goals",
+    "title2": "Technical Skills",
+    "title3": "Work Experience",
+    "title4": {
+      "title": "Personal Portfolio",
+      "subtitle": {
+        "web": "hover the link to see description",
+        "mobile": "long press the link to see description"
+      }
+    },
+    "title5": "Leave me a Message"
+  },
+  "topbar": {
+    "button1": {
+      "light": "light theme",
+      "dark": "dark theme"
+    },
+    "button2": "a español",
+    "button3": "claps",
+    "button4": "get my resume"
+  }
+}
