@@ -139,11 +139,21 @@ const App = () => {
         </Element>
 
         <Element name='experienceElement'>
-          <ExperienceContainer theme={theme} experience={experience} t={t} />
+          <ExperienceContainer
+            theme={theme}
+            experience={experience}
+            t={t}
+            language={language}
+          />
         </Element>
 
         <Element name='portfolioElement'>
-          <PortfolioContainer theme={theme} portfolio={portfolio} t={t} />
+          <PortfolioContainer
+            theme={theme}
+            portfolio={portfolio}
+            t={t}
+            language={language}
+          />
         </Element>
 
         <Element name='contactElement'>
