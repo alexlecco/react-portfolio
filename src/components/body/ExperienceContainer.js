@@ -16,7 +16,10 @@ const ExperienceContainer = ({ theme, experience }) => {
         {experience &&
           experience.map(job =>
             job.description ? (
-              <div className='flex flex-row justify-start pb-2' key={job.company}>
+              <div
+                className='flex flex-row justify-start pb-2'
+                key={job.description}
+              >
                 <CheckIcon />
                 <span className='pl-2'>{job.description}</span>
               </div>
@@ -28,7 +31,7 @@ const ExperienceContainer = ({ theme, experience }) => {
                 </div>
                 <div className='flex flex-col md:ml-16'>
                   {job.projects.map(project => (
-                    <p className='my-4'>
+                    <p className='my-4' key={project.client}>
                       • {project.client}, {project.time}: {project.description}
                     </p>
                   ))}

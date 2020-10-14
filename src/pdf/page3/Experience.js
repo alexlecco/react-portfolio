@@ -7,16 +7,17 @@ function Experience({ data, styles }) {
       <Text style={styles.sectionTitle}>Work Experience</Text>
       {data.experience.map(job =>
         job.description ? (
-          <Text key={job} style={styles.sectionItem}>
+          <Text key={job.description} style={styles.sectionItem}>
             • {job.description}
           </Text>
         ) : (
-          <View>
-            <Text key={job} style={styles.sectionItem}>
-              • {job.company}
-            </Text>
+          <View key={job.company}>
+            <Text style={styles.sectionItem}>• {job.company}</Text>
             {job.projects.map(project => (
-              <Text style={{ marginLeft: 20, marginBottom: 12 }}>
+              <Text
+                key={project.client}
+                style={{ marginLeft: 20, marginBottom: 12 }}
+              >
                 • {project.client}, {project.time}: {project.description}
               </Text>
             ))}

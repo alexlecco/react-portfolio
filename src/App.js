@@ -8,7 +8,7 @@ import ExperienceContainer from "./components/body/ExperienceContainer";
 import PortfolioContainer from "./components/body/PortfolioContainer";
 import Contact from "./components/body/Contact";
 import * as Scroll from "react-scroll";
-import { firebaseApp } from "./firebase";
+import database from "./firebase";
 
 let Element = Scroll.Element;
 var scroller = Scroll.scroller;
@@ -19,7 +19,7 @@ const App = () => {
   const [user, setUser] = useState({});
 
   useEffect(() => {
-    const userRef = firebaseApp.database().ref().child("data");
+    const userRef = database.ref().child("data");
     listenForUser(userRef);
   }, []);
 

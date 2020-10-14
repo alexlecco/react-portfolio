@@ -4,7 +4,7 @@ import Brightness4Icon from "@material-ui/icons/Brightness4";
 import NavigatorMenu from "./NavigatorMenu";
 import { PDFDownloadLink } from "@react-pdf/renderer";
 import PdfStructure from "../pdf/PdfStructure";
-import { firebaseApp } from "../firebase";
+import database from "../firebase";
 
 const Presentation = ({
   //flag,
@@ -45,7 +45,7 @@ const Presentation = ({
   const getMyResumeText = "get my resume";
 
   useEffect(() => {
-    const userRef = firebaseApp.database().ref().child("data").child("claps");
+    const userRef = database.ref().child("data").child("claps");
     setTimeout(userRef.set(localClaps), 1000);
   }, [localClaps]);
 
