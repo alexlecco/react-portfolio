@@ -8,8 +8,8 @@ function Languages({ data, styles, t }) {
   return (
     <View style={styles.section}>
       <Text style={styles.sectionTitle}>{t("languages.title")}</Text>
-      {data.languages.map(language => (
-        <Text key={language} style={styles.sectionItem}>
+      {data.languages.map((language, index) => (
+        <Text key={index} style={styles.sectionItem}>
           • {getLanguage(language)}
         </Text>
       ))}

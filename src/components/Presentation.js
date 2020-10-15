@@ -99,7 +99,7 @@ const Presentation = ({
   };
 
   return (
-    <div className='h-screen'>
+    <div className='h-screen md:flex md:flex-col md:justify-around'>
       <div className={`${theme}-transparent flex justify-between`}>
         <div className='flex flex-row'>
           <div
@@ -170,15 +170,15 @@ const Presentation = ({
           </div>
         </div>
       </div>
-      <div className='md:flex p-6 md:p-6'>
-        <div className='flex justify-center md:justify-end md:w-1/2 md:mx-20'>
+      <div className='md:flex p-6 md:pb-24 md:h-64'>
+        <div className='flex justify-center md:justify-end md:w-1/2 md:items-center presentation__left'>
           <img
-            className='w-32 md:w-64 rounded-full mx-auto md:mx-0 items-center'
+            className='w-32 md:w-64 rounded-full mx-auto md:mx-0 items-center image__left'
             src={avatar}
             alt='avatar'
           />
         </div>
-        <div className='md:w-1/2 md:flex md:flex-col md:justify-center md:items-start'>
+        <div className='md:w-1/2 md:flex md:flex-col md:justify-center md:items-start presentation__right'>
           <div className='flex flex-row justify-center align-middle pb-3'>
             {/*<img src={flag} className="presentation-flag" alt="flag" />*/}
             <h2 className={`text-3xl ${theme}-transparent`}>{name}</h2>
@@ -186,9 +186,9 @@ const Presentation = ({
           <div className={`text-lg ${profileTextColor} mb-4`}>{profile}</div>
           <div className='flex justify-center align-center'>
             {social &&
-              social.map(socNetwork => (
+              social.map((socNetwork, index) => (
                 // eslint-disable-next-line react/jsx-no-target-blank
-                <a href={socNetwork.url} target='_blank' key={socNetwork.name}>
+                <a href={socNetwork.url} target='_blank' key={index}>
                   <img
                     src={socNetwork.icon}
                     className='w-16 px-2'

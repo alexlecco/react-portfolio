@@ -77,6 +77,21 @@
   pointer-events: none;
 }
 
+@media (min-width: 767px) {
+  .image__left {
+    max-width: 165px;
+    max-height: 165px;
+  }
+
+  .presentation__right {
+    padding-left: 2%;
+  }
+
+  .presentation__left {
+    padding-right: 2%;
+  }
+}
+
 .skill-info {
   background-color: #ab8c20;
 }

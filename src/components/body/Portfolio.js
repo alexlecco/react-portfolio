@@ -16,7 +16,7 @@ function Portfolio({ project, typeProject, theme, language }) {
   return (
     <a href={project.url} target='blank'>
       <div
-        className='flex flex-row justify-start pb-2 projectContainer cursor-pointer'
+        className='flex flex-row justify-start pb-6 projectContainer cursor-pointer'
         onMouseEnter={toggleDescriptionVisibility}
         onMouseLeave={toggleDescriptionVisibility}
       >

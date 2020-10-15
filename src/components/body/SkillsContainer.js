@@ -18,7 +18,7 @@ const SkillsContainer = ({ theme, skills, t, language }) => {
             name={name}
             list={list}
             theme={theme}
-            key={name}
+            key={name.en}
             language={language}
           />
         ))}
