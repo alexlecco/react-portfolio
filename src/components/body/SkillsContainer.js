@@ -1,7 +1,7 @@
 import React from "react";
 import Skill from "./Skill";
 
-const SkillsContainer = ({ theme, skills, t }) => {
+const SkillsContainer = ({ theme, skills, t, language }) => {
   return (
     <div
       className={`min-h-screen flex flex-col justify-center align-items-center ${theme} h-auto pr-8 pl-8 md:pr-20 md:pl-20 pb-20`}
@@ -14,7 +14,13 @@ const SkillsContainer = ({ theme, skills, t }) => {
       </h1>
       <div className='flex flex-wrap overflow-hidden'>
         {skills.map(({ name, list }) => (
-          <Skill name={name} list={list} theme={theme} key={name} />
+          <Skill
+            name={name}
+            list={list}
+            theme={theme}
+            key={name}
+            language={language}
+          />
         ))}
       </div>
     </div>

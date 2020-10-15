@@ -5,11 +5,11 @@ import Profile from "./page1/Profile";
 import Goals from "./page1/Goals";
 import Studies from "./page1/Studies";
 import Skills from "./page2/Skills";
-import Laguages from "./page3/Laguages";
+import Languages from "./page3/Languages";
 import Experience from "./page3/Experience";
 import Mentoring from "./page4/Mentoring";
 
-const PdfStructure = ({ data }) => {
+const PdfStructure = ({ data, t }) => {
   return (
     <Document
       author='Alex Villecco'
@@ -17,23 +17,23 @@ const PdfStructure = ({ data }) => {
       title='Alex Villecco resume'
     >
       <Page style={styles.page}>
-        <Presentation data={data} styles={styles} />
-        <Profile data={data} styles={styles} />
-        <Goals data={data} styles={styles} />
-        <Studies data={data} styles={styles} />
+        <Presentation data={data} styles={styles} t={t} />
+        <Profile data={data} styles={styles} t={t} />
+        <Goals data={data} styles={styles} t={t} />
+        <Studies data={data} styles={styles} t={t} />
       </Page>
 
       <Page style={styles.page}>
-        <Skills data={data} styles={styles} />
+        <Skills data={data} styles={styles} t={t} />
       </Page>
 
       <Page style={styles.page}>
-        <Laguages data={data} styles={styles} />
-        <Experience data={data} styles={styles} />
+        <Languages data={data} styles={styles} t={t} />
+        <Experience data={data} styles={styles} t={t} />
       </Page>
 
       <Page style={styles.pageTop}>
-        <Mentoring data={data} styles={styles} />
+        <Mentoring data={data} styles={styles} t={t} />
       </Page>
     </Document>
   );

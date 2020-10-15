@@ -135,7 +135,7 @@ const App = () => {
         </Element>
 
         <Element name='skillsElement'>
-          <SkillsContainer theme={theme} skills={skills} t={t} />
+          <SkillsContainer theme={theme} skills={skills} t={t} language={language} />
         </Element>
 
         <Element name='experienceElement'>

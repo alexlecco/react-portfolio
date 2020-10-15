@@ -27,5 +27,38 @@
     "button2": "a español",
     "button3": "claps",
     "button4": "get my resume"
+  },
+  "pdf": {
+    "presentation": {
+      "greetings": "Hi! i'm",
+      "myResidence": "I live in",
+      "myAge1": "I'm",
+      "myAge2": "years old",
+      "myPhone": "my phone is",
+      "myEmail": "my email is",
+      "knowMe": "...get to know me better"
+    }
+  },
+  "profile": {
+    "title": "Professional Profile",
+    "imA": "I'm a"
+  },
+  "goals": {
+    "title": "Professional Goals"
+  },
+  "studies": {
+    "title": "My Studies"
+  },
+  "skills": {
+    "title": "My Skills"
+  },
+  "languages": {
+    "title": "Languages"
+  },
+  "experience": {
+    "title": "Work Experience"
+  },
+  "mentoring": {
+    "title": "Mentoring"
   }
 }

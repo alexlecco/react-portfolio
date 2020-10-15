@@ -1,13 +1,13 @@
-import React from 'react'
+import React from "react";
 import { View, Text } from "@react-pdf/renderer";
 
-function Profile({data, styles}) {
+function Profile({ data, styles, t }) {
   return (
     <View style={styles.section}>
-      <Text style={styles.sectionTitle}>Professional Profile</Text>
-      <Text>I'm a {data.profile}</Text>
+      <Text style={styles.sectionTitle}>{t("profile.title")}</Text>
+      <Text>{`${t("profile.imA")} ${data.profile}`}</Text>
     </View>
-  )
+  );
 }
 
-export default Profile
+export default Profile;

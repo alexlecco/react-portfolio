@@ -27,5 +27,38 @@
     "button2": "to english",
     "button3": "aplausos",
     "button4": "descargá mi CV"
+  },
+  "pdf": {
+    "presentation": {
+      "greetings": "¡Hola! soy",
+      "myResidence": "Vivo en",
+      "myAge1": "Tengo",
+      "myAge2": "años",
+      "myPhone": "mi telefono es",
+      "myEmail": "mi email es",
+      "knowMe": "...conoceme un poco más"
+    }
+  },
+  "profile": {
+    "title": "Perfil Profesional",
+    "imA": "Soy un"
+  },
+  "goals": {
+    "title": "Metas Profesionales"
+  },
+  "studies": {
+    "title": "Mis Estudios"
+  },
+  "skills": {
+    "title": "Mis Habilidades"
+  },
+  "languages": {
+    "title": "Idiomas"
+  },
+  "experience": {
+    "title": "Experiencia Laboral"
+  },
+  "mentoring": {
+    "title": "Mentoreo"
   }
 }

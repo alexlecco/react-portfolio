@@ -21,20 +21,26 @@ const getAge = birthday => {
   return Math.abs(age_dt.getUTCFullYear() - 1970);
 };
 
-function Presentation({ data, styles }) {
+function Presentation({ data, styles, t }) {
   return (
     <View style={styles.section}>
       <Text style={styles.documentTitle}>
-        Hi! i'm <Text style={{ color: "#811ADA" }}>{data.name}</Text>
+        {t("pdf.presentation.greetings")}{" "}
+        <Text style={{ color: "#811ADA" }}>{data.name}</Text>
       </Text>
-      <Text>{`I live in ${data.city}, ${data.country}`}</Text>
-      <Text>{`I'm ${getAge(data.birthday)} years old`}</Text>
-      <Text>{`my phone: ${data.phone}`}</Text>
       <Text>
-        my email:​ <Link style={{ color: "#37aef7" }}>{data.email}</Link>
+        {`${t("pdf.presentation.myResidence")} ${data.city}, ${data.country}`}
+      </Text>
+      <Text>{`${t("pdf.presentation.myAge1")} ${getAge(data.birthday)} ${t(
+        "pdf.presentation.myAge2"
+      )}`}</Text>
+      <Text>{`${t("pdf.presentation.myPhone")} ${data.phone}`}</Text>
+      <Text>
+        {t("pdf.presentation.myEmail")}{" "}
+        <Link style={{ color: "#37aef7" }}>{data.email}</Link>
       </Text>
       <Text style={{ fontWeight: 500, marginBottom: 5, marginTop: 10 }}>
-        ...get to know me a bit more
+        {t("pdf.presentation.knowMe")}
       </Text>
       {data.social.map(network => getSocialNetwork(network, styles))}
     </View>

@@ -156,7 +156,7 @@ const Presentation = ({
             onMouseLeave={toggleLabelsVisible}
           >
             <PDFDownloadLink
-              document={<PdfStructure data={userData} />}
+              document={<PdfStructure data={userData} t={t} />}
               fileName='alex-resume.pdf'
               className='flex flex-col items-center'
             >
