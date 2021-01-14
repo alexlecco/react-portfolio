@@ -21,6 +21,7 @@ const PdfStructure = ({ data, t }) => {
         <Profile data={data} styles={styles} t={t} />
         <Goals data={data} styles={styles} t={t} />
         <Studies data={data} styles={styles} t={t} />
+        <Languages data={data} styles={styles} t={t} />
       </Page>
 
       <Page style={styles.page}>
@@ -28,7 +29,6 @@ const PdfStructure = ({ data, t }) => {
       </Page>
 
       <Page style={styles.page}>
-        <Languages data={data} styles={styles} t={t} />
         <Experience data={data} styles={styles} t={t} />
       </Page>
 
@@ -50,14 +50,14 @@ const styles = StyleSheet.create({
     justifyContent: "space-around",
     padding: 60,
     color: "#8D8F8D",
-    fontSize: 15,
+    fontSize: 14,
   },
   pageTop: {
     flex: 1,
     justifyContent: "flex-start",
     padding: 60,
     color: "#8D8F8D",
-    fontSize: 15,
+    fontSize: 14,
   },
   section: {
     marginTop: 20,
